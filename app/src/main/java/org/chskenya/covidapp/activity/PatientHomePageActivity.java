@@ -26,7 +26,7 @@ public class PatientHomePageActivity extends AppCompatActivity {
 
     private RelativeLayout covidManagementBtn, triageBtn, screeningBtn, contactTracingBtn, labbtn,
             radiologyBtn, patientManagementBtn, linkageBtn;
-    private LinearLayout patientHistoryBtn;
+    private LinearLayout patientHistoryBtn, radiologyResultsBtn, labResultBtn;
     private TextView inpatientName, closePatientSession;
 
     private Patient inpatient;
@@ -91,6 +91,8 @@ public class PatientHomePageActivity extends AppCompatActivity {
 //        linkageBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, LinkageActivity.class)));
 
         patientHistoryBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, PatientHistoryActivity.class)));
+        radiologyResultsBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, RadiologyResultsActivity.class)));
+        labResultBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, RadiologyResultsActivity.class)));
 
     }
 
@@ -106,7 +108,9 @@ public class PatientHomePageActivity extends AppCompatActivity {
 //        linkageBtn = findViewById(R.id.linkageBtn);
         labbtn = findViewById(R.id.labbtn);
         radiologyBtn = findViewById(R.id.radiologyBtn);
+        radiologyResultsBtn = findViewById(R.id.radiologyResultsBtn);
         patientDB = PatientDB.getInstance(PatientHomePageActivity.this);
+        labResultBtn = findViewById(R.id.labResultBtn);
     }
 
 }

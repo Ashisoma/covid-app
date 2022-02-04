@@ -502,6 +502,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/labResultBtn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginStart="5dp"
@@ -530,6 +531,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/radiologyResultsBtn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginStart="5dp"

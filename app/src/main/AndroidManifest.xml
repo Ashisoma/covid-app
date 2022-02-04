@@ -20,6 +20,12 @@
         android:theme="@style/Theme.CovidApp"
         tools:replace="android:icon">
         <activity
+            android:name=".activity.LabActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.RadiologyResultsActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.LinkageActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
