@@ -67,4 +67,10 @@ public class PatientHistoryActivity extends AppCompatActivity {
         patientDB = PatientDB.getInstance(PatientHistoryActivity.this);
         toolbar = findViewById(R.id.toolbar);
     }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
 }
