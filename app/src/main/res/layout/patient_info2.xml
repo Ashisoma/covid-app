@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+     <TextView
+         style="@style/TextAppearance.AppCompat.Title"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:gravity="center_horizontal"
+         android:text="Patient Registration (Pt. 2)"
+         android:textAllCaps="true"
+         android:textColor="#000"
+         android:textSize="24sp" />
+
+     <TextView
+         style="@style/TextAppearance.AppCompat.Medium"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="10dp"
+         android:text="6. Citizenship/Nationality"
+         android:textColor="#000" />
+
+     <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+         android:id="@+id/citizenshipSpinner"
+         android:layout_width="match_parent"
+         android:layout_height="40dp"
+         app:hintText="Select Citizenship/Nationality"
+         android:background="@drawable/rounded_edt"
+         android:padding="5dp"
+         android:dropDownSelector="@drawable/ic_baseline_arrow_drop_down_24"
+         android:layout_marginTop="10dp"/>
+
+     <TextView
+         style="@style/TextAppearance.AppCompat.Medium"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="10dp"
+         android:text="7.  Level of education"
+         android:textColor="#000" />
+
+     <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+         android:id="@+id/educationLevelSpinner"
+         android:layout_width="match_parent"
+         android:layout_height="40dp"
+         app:hintText="Select level of education"
+         android:background="@drawable/rounded_edt"
+         android:padding="5dp"
+         android:dropDownSelector="@drawable/ic_baseline_arrow_drop_down_24"
+         android:layout_marginTop="10dp"/>
+
+     <TextView
+         style="@style/TextAppearance.AppCompat.Medium"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="10dp"
+         android:text="8. Marital Status"
+         android:textColor="#000" />
+
+     <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+         android:id="@+id/maritalStatusSpinner"
+         android:layout_width="match_parent"
+         android:layout_height="40dp"
+         app:hintText="Select Marital Status"
+         android:background="@drawable/rounded_edt"
+         android:padding="5dp"
+         android:dropDownSelector="@drawable/ic_baseline_arrow_drop_down_24"
+         android:layout_marginTop="10dp"/>
+
+     <TextView
+         style="@style/TextAppearance.AppCompat.Medium"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="10dp"
+         android:text="9. Occupation"
+         android:textColor="#000" />
+
+     <EditText
+         android:id="@+id/etOccupation"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="10dp"
+         android:background="@drawable/rounded_edt"
+         android:hint="Occupation"
+         android:inputType="text"
+         android:padding="5dp" />
+
+     <TextView
+         style="@style/TextAppearance.AppCompat.Medium"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="10dp"
+         android:text="10. Is the case alive?"
+         android:textColor="#000" />
+
+     <RadioGroup
+         android:id="@+id/schoptionradiogroup"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_margin="10dp">
+
+          <RadioButton
+              android:id="@+id/aliveyesopt"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/yes" />
+
+          <RadioButton
+              android:id="@+id/alivenoopt"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/no" />
+
+     </RadioGroup>
+
+
+</LinearLayout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        style="@style/TextAppearance.AppCompat.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Patient History Form (Pt. 1)"
+        android:textAllCaps="true"
+        android:textColor="#000"
+        android:textSize="24sp" />
+
+    <TextView
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Has the patient travelled in the 14 days prior to symptom onset?"
+        android:textColor="#000" />
+
+    <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+        android:id="@+id/travelledSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_edt"
+        android:dropDownSelector="@drawable/ic_baseline_arrow_drop_down_24"
+        android:padding="5dp"
+        app:hintText="Select option" />
+
+    <LinearLayout
+        android:id="@+id/hasTravelledLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Specify the places the patient travelled"
+            android:textColor="#000" />
+
+        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+            android:id="@+id/countySpinner"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_edt"
+            android:dropDownSelector="@drawable/ic_baseline_arrow_drop_down_24"
+            android:padding="5dp"
+            app:hintText="Select county" />
+    </LinearLayout>
+
+    <TextView
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Has the patient had close contact with a person with acute respiratory infection in the 14 days prior to symptom onset"
+        android:textColor="#000" />
+
+    <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+        android:id="@+id/contactSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_edt"
+        android:dropDownSelector="@drawable/ic_baseline_arrow_drop_down_24"
+        android:padding="5dp"
+        app:hintText="Select option" />
+
+</LinearLayout>

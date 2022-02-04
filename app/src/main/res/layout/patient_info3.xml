@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        style="@style/TextAppearance.AppCompat.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Patient Registration (Pt. 3)"
+        android:textAllCaps="true"
+        android:textColor="#000"
+        android:textSize="24sp" />
+
+    <TextView
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="11. Place where the case was investigated"
+        android:textColor="#000" />
+
+    <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+        android:id="@+id/investigationPlaceSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_edt"
+        android:dropDownSelector="@drawable/ic_baseline_arrow_drop_down_24"
+        android:padding="5dp"
+        app:hintText="Select Place" />
+
+    <LinearLayout
+        android:id="@+id/getHealthFacility"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Health Facility"
+            android:textColor="#000" />
+
+        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+            android:id="@+id/facility_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_edt"
+            android:dropDownSelector="@drawable/ic_baseline_arrow_drop_down_24"
+            android:padding="5dp"
+            app:hintText="Select Facility" />
+    </LinearLayout>
+
+    <TextView
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="12. Patient usual place of residence"
+        android:textColor="#000" />
+
+    <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+        android:id="@+id/CountySpinner"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_edt"
+        android:dropDownSelector="@drawable/ic_baseline_arrow_drop_down_24"
+        android:padding="5dp"
+        app:hintText="Select County" />
+
+    <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+        android:id="@+id/subcountySpinner"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_edt"
+        android:dropDownSelector="@drawable/ic_baseline_arrow_drop_down_24"
+        android:padding="5dp"
+        app:hintText="Select Subcounty" />
+
+    <TextView
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="13. Next of Kin Name"
+        android:textColor="#000" />
+
+    <EditText
+        android:id="@+id/etnokName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_edt"
+        android:hint="Enter names"
+        android:inputType="textEmailAddress"
+        android:padding="5dp" />
+
+    <TextView
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="14. Next of Kin Phone Number"
+        android:textColor="#000" />
+
+    <EditText
+        android:id="@+id/etnokPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_edt"
+        android:hint="Enter Phone number"
+        android:inputType="phone"
+        android:padding="5dp" />
+
+</LinearLayout>

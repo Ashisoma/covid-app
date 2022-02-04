@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        style="@style/TextAppearance.AppCompat.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Linkage Form (Pt. 1)"
+        android:textAllCaps="true"
+        android:textColor="#000"
+        android:textSize="24sp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Patient Names"
+        app:boxStrokeColor="@color/required_text_input_layout"
+        app:hintTextColor="@color/tbGreen"
+        app:startIconContentDescription="names_icon"
+        app:startIconDrawable="@drawable/ic_person_outline">
+
+        <EditText
+            android:id="@+id/etNames"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:enabled="false"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Date of registration"
+        app:boxStrokeColor="@color/required_text_input_layout"
+        app:hintTextColor="@color/tbGreen"
+        app:startIconContentDescription="names_icon"
+        app:startIconDrawable="@drawable/ic_date">
+
+        <EditText
+            android:id="@+id/etRegistrationDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:enabled="false"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Sex"
+        app:boxStrokeColor="@color/required_text_input_layout"
+        app:hintTextColor="@color/tbGreen"
+        app:startIconContentDescription="names_icon"
+        app:startIconDrawable="@drawable/ic_gender">
+
+        <EditText
+            android:id="@+id/etgender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:enabled="false"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Age"
+        app:boxStrokeColor="@color/required_text_input_layout"
+        app:hintTextColor="@color/tbGreen"
+        app:startIconContentDescription="names_icon"
+        app:startIconDrawable="@drawable/ic_date">
+
+        <EditText
+            android:id="@+id/etAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:enabled="false"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</LinearLayout>

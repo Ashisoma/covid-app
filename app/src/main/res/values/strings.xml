@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">Tiba-Tekelezi</string>
+    <string name="concerts_theater"><![CDATA[Concerts & Theater]]></string>
+    <string name="ev_wth_friends">Events with friends</string>
+    <string name="friends_go">Friends go</string>
+    <string name="latest">Latest</string>
+    <string name="map_location">Map Location</string>
+    <string name="meetup_for_android_developer_s">Meetup for Android Developer\'s</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+    <string name="middle_name">Middle Name</string>
+    <string name="first_name">First Name</string>
+    <string name="search_for_a_patient">Check in a patient</string>
+    <string name="search_by">Search by Phone/ID Number</string>
+    <string name="error_title">Error</string>
+    <string name="okay">OK</string>
+    <string name="sweetalert_error_message">Unable to proceed please try again…</string>
+    <string name="no_prev_page">No previous page</string>
+    <string name="finish">finish</string>
+    <string name="password">Password</string>
+    <string name="phone_number">Enter Phone Number</string>
+    <string name="error_message">Error Logging in. Try again later</string>
+    <string name="forgot_username_or_password">Forgot Password?</string>
+    <string name="log_in">Log In</string>
+    <string name="click_here_to_register">Register Account</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="register">Register</string>
+    <string name="back_to_log_in">Back to Log in</string>
+    <string name="register_patient">Register a new patient</string>
+    <string name="developed_by">Developed by Centre for Health Solutions -Kenya(CHS)</string>
+    <string name="getting_data">Getting Data</string>
+    <string name="user_profile">User Profile</string>
+    <string name="logout">Log out</string>
+    <string name="password_error">Password is required.</string>
+    <string name="confirm_password_error">Re-enter your Password</string>
+    <string name="pass_dont_match_error">Password does not match!</string>
+    <string name="phone_format_error">Enter a valid Phone Number in the format 07****.</string>
+    <string name="register_success">Registered successfully. Login to continue</string>
+    <string name="internet_error">Check your Internet Connection and try again!</string>
+    <string name="loading">Loading</string>
+    <string name="success">Success</string>
+    <string name="this_number">\"This Number \"</string>
+    <string name="unrecognized_number_error">\" is not a recognised system user\"</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="submit">submit</string>
+    <string name="unauthorized_user_error">User not allowed. Contact admin or Enter correct username and password</string>
+    <string name="server_access_error">Unable to connect.</string>
+    <string name="exit_app">Exit Application</string>
+    <string name="retry">Retry</string>
+    <string name="session_expiry_error">Your Session has expired. Kindly Login Again to proceed.</string>
+    <string name="verify_session">Verifying Your Session</string>
+    <string name="saving_patient">Saving Patient Data</string>
+    <string name="patient_registration_success">Patient Has been registered successfully</string>
+    <string name="main_activity">Back to Homepage</string>
+    <string name="getting_patients">Searching Patient. Please wait</string>
+    <string name="check_out_patient">Are you sure you want to check out this patient?</string>
+    <string name="warning">Warning</string>
+    <string name="cancel">Cancel</string>
+    <string name="no_checked_in_patient_error">There is no checked in patient currently. Kindly search a patient and check them in to proceed.</string>
+    <string name="patient_save_data_success">Patient Data has been saved successfully</string>
+    <string name="title_activity_contact_linelist">Contact Linelist Activity</string>
+    <string name="check_in">Check in</string>
+
+    <string-array name="options_list">
+        <item>Select Option</item>
+        <item>Yes</item>
+        <item>No</item>
+        <item>Item3</item>
+    </string-array>
+</resources>

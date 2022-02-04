@@ -1,0 +1,173 @@
+Index: app/src/main/java/org/chskenya/covidapp/util/Constants.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.chskenya.covidapp.util;\r\n\r\nimport android.content.Context;\r\nimport android.os.Environment;\r\n\r\nimport org.chskenya.covidapp.R;\r\n\r\nimport java.io.File;\r\n\r\npublic class Constants {\r\n    public static final String UUID = \"{5C536241-D67E-4393-BA26-87E198E215B5}\";\r\n    public static final String BASE_URL = \"http://192.168.3.76:8181/covid-app-api/\";\r\n    public static final String MY_PREFS_NAME = \"TibaTekeleziPrefs\";\r\n\r\n    public File DIRECTORY_PATH;\r\n    public File ERROR_LOG_PATH;\r\n\r\n    public Constants(Context context) {\r\n        DIRECTORY_PATH = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator\r\n                + context.getString(R.string.app_name));\r\n\r\n//        CACHE_PATH = context.getFilesDir();\r\n        ERROR_LOG_PATH = new File(DIRECTORY_PATH + File.separator + \".logs\");\r\n\r\n//        ERROR_LOG_PATH = new File(CACHE_PATH, context.getResources().getString(R.string.error_log_file));\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/org/chskenya/covidapp/util/Constants.java b/app/src/main/java/org/chskenya/covidapp/util/Constants.java
+--- a/app/src/main/java/org/chskenya/covidapp/util/Constants.java	(revision 92fea92711f80f4c1fb2ed7c6fd41dc0ee419eef)
++++ b/app/src/main/java/org/chskenya/covidapp/util/Constants.java	(date 1643890054153)
+@@ -8,8 +8,8 @@
+ import java.io.File;
+ 
+ public class Constants {
+-    public static final String UUID = "{5C536241-D67E-4393-BA26-87E198E215B5}";
+-    public static final String BASE_URL = "http://192.168.3.76:8181/covid-app-api/";
++    public static final String UUID = "5C536241-D67E-4393-BA26-87E198E215B5";
++    public static final String BASE_URL = "http://172.16.1.110:83/covid-app-api/";
+     public static final String MY_PREFS_NAME = "TibaTekeleziPrefs";
+ 
+     public File DIRECTORY_PATH;
+@@ -24,4 +24,4 @@
+ 
+ //        ERROR_LOG_PATH = new File(CACHE_PATH, context.getResources().getString(R.string.error_log_file));
+     }
+-}
++}
+\ No newline at end of file
+Index: .idea/vcs.xml
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+deleted file mode 100644
+--- a/.idea/vcs.xml	(revision 92fea92711f80f4c1fb2ed7c6fd41dc0ee419eef)
++++ /dev/null	(revision 92fea92711f80f4c1fb2ed7c6fd41dc0ee419eef)
+@@ -1,6 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="VcsDirectoryMappings">
+-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/compiler.xml
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+deleted file mode 100644
+--- a/.idea/compiler.xml	(revision 92fea92711f80f4c1fb2ed7c6fd41dc0ee419eef)
++++ /dev/null	(revision 92fea92711f80f4c1fb2ed7c6fd41dc0ee419eef)
+@@ -1,6 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="CompilerConfiguration">
+-    <bytecodeTargetLevel target="1.8" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/.gitignore
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+deleted file mode 100644
+--- a/.idea/.gitignore	(revision 92fea92711f80f4c1fb2ed7c6fd41dc0ee419eef)
++++ /dev/null	(revision 92fea92711f80f4c1fb2ed7c6fd41dc0ee419eef)
+@@ -1,3 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+deleted file mode 100644
+--- a/.idea/misc.xml	(revision 92fea92711f80f4c1fb2ed7c6fd41dc0ee419eef)
++++ /dev/null	(revision 92fea92711f80f4c1fb2ed7c6fd41dc0ee419eef)
+@@ -1,9 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+-    <output url="file://$PROJECT_DIR$/build/classes" />
+-  </component>
+-  <component name="ProjectType">
+-    <option name="id" value="Android" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/jarRepositories.xml
+===================================================================
+diff --git a/.idea/jarRepositories.xml b/.idea/jarRepositories.xml
+deleted file mode 100644
+--- a/.idea/jarRepositories.xml	(revision 92fea92711f80f4c1fb2ed7c6fd41dc0ee419eef)
++++ /dev/null	(revision 92fea92711f80f4c1fb2ed7c6fd41dc0ee419eef)
+@@ -1,25 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="RemoteRepositoriesConfiguration">
+-    <remote-repository>
+-      <option name="id" value="central" />
+-      <option name="name" value="Maven Central repository" />
+-      <option name="url" value="https://repo1.maven.org/maven2" />
+-    </remote-repository>
+-    <remote-repository>
+-      <option name="id" value="jboss.community" />
+-      <option name="name" value="JBoss Community repository" />
+-      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+-    </remote-repository>
+-    <remote-repository>
+-      <option name="id" value="BintrayJCenter" />
+-      <option name="name" value="BintrayJCenter" />
+-      <option name="url" value="https://jcenter.bintray.com/" />
+-    </remote-repository>
+-    <remote-repository>
+-      <option name="id" value="Google" />
+-      <option name="name" value="Google" />
+-      <option name="url" value="https://dl.google.com/dl/android/maven2/" />
+-    </remote-repository>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+deleted file mode 100644
+--- a/.idea/gradle.xml	(revision 92fea92711f80f4c1fb2ed7c6fd41dc0ee419eef)
++++ /dev/null	(revision 92fea92711f80f4c1fb2ed7c6fd41dc0ee419eef)
+@@ -1,22 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="GradleMigrationSettings" migrationVersion="1" />
+-  <component name="GradleSettings">
+-    <option name="linkedExternalProjectsSettings">
+-      <GradleProjectSettings>
+-        <option name="testRunner" value="PLATFORM" />
+-        <option name="distributionType" value="DEFAULT_WRAPPED" />
+-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+-        <option name="gradleJvm" value="1.8" />
+-        <option name="modules">
+-          <set>
+-            <option value="$PROJECT_DIR$" />
+-            <option value="$PROJECT_DIR$/app" />
+-          </set>
+-        </option>
+-        <option name="resolveModulePerSourceSet" value="false" />
+-        <option name="useQualifiedModuleNames" value="true" />
+-      </GradleProjectSettings>
+-    </option>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: app/src/main/res/xml/network_security_config.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<network-security-config>\r\n    <domain-config cleartextTrafficPermitted=\"true\">\r\n        <domain includeSubdomains=\"true\">192.168.43.22</domain>\r\n    </domain-config>\r\n    <domain-config cleartextTrafficPermitted=\"true\">\r\n        <domain includeSubdomains=\"true\">192.168.3.76</domain>\r\n    </domain-config>\r\n</network-security-config>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/xml/network_security_config.xml b/app/src/main/res/xml/network_security_config.xml
+--- a/app/src/main/res/xml/network_security_config.xml	(revision 92fea92711f80f4c1fb2ed7c6fd41dc0ee419eef)
++++ b/app/src/main/res/xml/network_security_config.xml	(date 1643890044499)
+@@ -1,9 +1,6 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <network-security-config>
+     <domain-config cleartextTrafficPermitted="true">
+-        <domain includeSubdomains="true">192.168.43.22</domain>
+-    </domain-config>
+-    <domain-config cleartextTrafficPermitted="true">
+-        <domain includeSubdomains="true">192.168.3.76</domain>
++        <domain includeSubdomains="true">172.16.1.110</domain>
+     </domain-config>
+ </network-security-config>
