@@ -82,23 +82,23 @@ public class PatientHomePageActivity extends AppCompatActivity {
 
         radiologyBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, RadiologyActivity.class)));
 
-        covidManagementBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, PatientManagementActivity.class)));
+//        covidManagementBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, PatientManagementActivity.class)));
 
-        patientHistoryBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, PatientHistoryActivity.class)));
+//        patientHistoryBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, PatientHistoryActivity.class)));
 
-        linkageBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, LinkageActivity.class)));
+//        linkageBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, LinkageActivity.class)));
 
     }
 
     private void initViews() {
-        covidManagementBtn = findViewById(R.id.covidManagementBtn);
+//        covidManagementBtn = findViewById(R.id.covidManagementBtn);
         triageBtn = findViewById(R.id.triageBtn);
         inpatientName = findViewById(R.id.inpatientName);
         closePatientSession = findViewById(R.id.closePatientSession);
         screeningBtn = findViewById(R.id.screeningBtn);
         contactTracingBtn = findViewById(R.id.contactTracingBtn);
-        patientHistoryBtn = findViewById(R.id.patientHistoryBtn);
-        linkageBtn = findViewById(R.id.linkageBtn);
+//        patientHistoryBtn = findViewById(R.id.patientHistoryBtn);
+//        linkageBtn = findViewById(R.id.linkageBtn);
         labbtn = findViewById(R.id.labbtn);
         radiologyBtn = findViewById(R.id.radiologyBtn);
         patientDB = PatientDB.getInstance(PatientHomePageActivity.this);

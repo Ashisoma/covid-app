@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,13 +9,32 @@
     android:weightSum="10"
     tools:context=".activity.PatientHomePageActivity">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/tbGreen"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:paddingStart="10dp"
+            android:paddingEnd="0dp"
+            app:elevation="0dp"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:titleTextAppearance="@style/Toolbar.TitleText"
+            app:titleTextColor="@color/colorPrimary" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
     <!--Checked in patient Tab-->
     <LinearLayout
         android:id="@+id/checkedInPatient"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="10dp"
         android:layout_weight=".5"
@@ -83,7 +103,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="10dp"
         android:weightSum="3"
-        android:layout_weight="9">
+        android:layout_weight="6">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -145,59 +165,7 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/labbtn"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:transitionName="card"
-                android:layout_weight="2"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/my_gradient_drawable3"
-                android:orientation="vertical">
-
-                <!--title and desc-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:padding="5dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="15dp"
-                        android:textAllCaps="true"
-                        android:text="Laboratory"
-                        android:transitionName="title"
-                        android:textColor="@color/black"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-                <!--Icon-->
-                <RelativeLayout
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:background="@drawable/arc_dark_blue_fil">
-
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="6dp"
-                        android:padding="5dp"
-                        android:src="@drawable/ic_laboratory" />
-                </RelativeLayout>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/contactTracingBtn"
+                android:id="@+id/radiologyBtn"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:transitionName="card"
@@ -220,7 +188,7 @@
                         android:layout_marginStart="5dp"
                         android:layout_marginTop="15dp"
                         android:textAllCaps="true"
-                        android:text="Contact tracing"
+                        android:text="Radiology"
                         android:transitionName="title"
                         android:textColor="@color/black"
                         android:textSize="15sp"
@@ -244,7 +212,7 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="6dp"
                         android:padding="5dp"
-                        android:src="@drawable/ic_contact_tracing" />
+                        android:src="@drawable/ic_radiology" />
                 </RelativeLayout>
             </RelativeLayout>
 
@@ -311,7 +279,7 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/radiologyBtn"
+                android:id="@+id/patientManagementBtn"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:transitionName="card"
@@ -334,59 +302,7 @@
                         android:layout_marginStart="5dp"
                         android:layout_marginTop="15dp"
                         android:textAllCaps="true"
-                        android:text="Radiology"
-                        android:transitionName="title"
-                        android:textColor="@color/black"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-                <!--Icon-->
-                <RelativeLayout
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:background="@drawable/arc_dark_blue_fil">
-
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="6dp"
-                        android:padding="5dp"
-                        android:src="@drawable/ic_radiology" />
-                </RelativeLayout>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/tbManagementBtn"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:transitionName="card"
-                android:layout_weight="2"
-                android:background="@drawable/my_gradient_drawable3"
-                android:orientation="vertical"
-                android:layout_marginTop="10dp">
-
-                <!--title and desc-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:padding="5dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="15dp"
-                        android:textAllCaps="true"
-                        android:text="TB management"
+                        android:text="Patient management"
                         android:transitionName="title"
                         android:textColor="@color/black"
                         android:textSize="15sp"
@@ -410,11 +326,12 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="6dp"
                         android:padding="5dp"
-                        android:src="@drawable/ic_tuberculosis" />
+                        android:src="@drawable/ic_patient" />
                 </RelativeLayout>
             </RelativeLayout>
 
         </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -424,8 +341,9 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
+
             <RelativeLayout
-                android:id="@+id/patientHistoryBtn"
+                android:id="@+id/labbtn"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:transitionName="card"
@@ -437,20 +355,21 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="5dp">
+                    android:layout_alignParentTop="true"
+                    android:padding="5dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:layout_marginTop="15dp"
-                        android:text="Patient History"
                         android:textAllCaps="true"
+                        android:text="Laboratory"
+                        android:transitionName="title"
                         android:textColor="@color/black"
                         android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:transitionName="title" />
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -470,12 +389,13 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="6dp"
                         android:padding="5dp"
-                        android:src="@drawable/ic_patient_history" />
+                        android:src="@drawable/ic_laboratory" />
                 </RelativeLayout>
             </RelativeLayout>
 
+
             <RelativeLayout
-                android:id="@+id/linkageBtn"
+                android:id="@+id/contactTracingBtn"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:transitionName="card"
@@ -498,7 +418,7 @@
                         android:layout_marginStart="5dp"
                         android:layout_marginTop="15dp"
                         android:textAllCaps="true"
-                        android:text="Linkage"
+                        android:text="Contact tracing"
                         android:transitionName="title"
                         android:textColor="@color/black"
                         android:textSize="15sp"
@@ -509,7 +429,7 @@
                 <!--Icon-->
                 <RelativeLayout
                     android:layout_width="80dp"
-                    android:layout_height="70dp"
+                    android:layout_height="80dp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
                     android:background="@drawable/arc_dark_blue_fil">
@@ -522,61 +442,116 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="6dp"
                         android:padding="5dp"
-                        android:src="@drawable/ic_linkage" />
+                        android:src="@drawable/ic_contact_tracing" />
                 </RelativeLayout>
             </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/covidManagementBtn"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:transitionName="card"
-                android:layout_weight="2"
-                android:background="@drawable/my_gradient_drawable3"
-                android:orientation="vertical"
-                android:layout_marginTop="10dp">
+        </LinearLayout>
 
-                <!--title and desc-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:padding="5dp"
-                    android:orientation="vertical">
+    </LinearLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="15dp"
-                        android:textAllCaps="true"
-                        android:text="Covid19 management"
-                        android:transitionName="title"
-                        android:textColor="@color/black"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Extra Features"
+        android:textStyle="bold"
+        android:layout_marginStart="20dp" />
 
-                </LinearLayout>
+    <View
+        android:layout_width="200dp"
+        android:layout_height="3dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/gradient_bg"/>
 
-                <!--Icon-->
-                <RelativeLayout
-                    android:layout_width="80dp"
-                    android:layout_height="70dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:background="@drawable/arc_dark_blue_fil">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="3"
+        android:weightSum="3">
 
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="6dp"
-                        android:padding="5dp"
-                        android:src="@drawable/ic_covid" />
-                </RelativeLayout>
-            </RelativeLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/my_gradient_drawable4"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_patient_history" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal"
+                android:text="Patient History"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/my_gradient_drawable4"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_lab_results" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal"
+                android:text="Lab Results"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/my_gradient_drawable4"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_radiology_results" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal"
+                android:text="Radiology Results"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
