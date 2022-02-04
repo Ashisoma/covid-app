@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Onesmus.Ashisoma/Downloads/tiba-tekelezi-app/app/src/main/res/layout/activity_patient_history.xml" value="0.1796875" />
         <entry key="..\:/Users/Onesmus.Ashisoma/Downloads/tiba-tekelezi-app/app/src/main/res/layout/activity_patient_home_page.xml" value="0.1796875" />
         <entry key="..\:/Users/Onesmus.Ashisoma/Downloads/tiba-tekelezi-app/app/src/main/res/layout/activity_patient_registration.xml" value="0.1796875" />
+        <entry key="..\:/Users/Onesmus.Ashisoma/Downloads/tiba-tekelezi-app/app/src/main/res/layout/linkage_info1.xml" value="0.12228260869565218" />
+        <entry key="..\:/Users/Onesmus.Ashisoma/Downloads/tiba-tekelezi-app/app/src/main/res/layout/patient_history_info1.xml" value="0.1796875" />
       </map>
     </option>
   </component>

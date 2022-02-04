@@ -84,7 +84,7 @@ public class PatientHomePageActivity extends AppCompatActivity {
 
 //        covidManagementBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, PatientManagementActivity.class)));
 
-//        patientHistoryBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, PatientHistoryActivity.class)));
+        patientHistoryBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, PatientHistoryActivity.class)));
 
 //        linkageBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, LinkageActivity.class)));
 
@@ -97,7 +97,7 @@ public class PatientHomePageActivity extends AppCompatActivity {
         closePatientSession = findViewById(R.id.closePatientSession);
         screeningBtn = findViewById(R.id.screeningBtn);
         contactTracingBtn = findViewById(R.id.contactTracingBtn);
-//        patientHistoryBtn = findViewById(R.id.patientHistoryBtn);
+        patientHistoryBtn = findViewById(R.id.patientManagementBtn);
 //        linkageBtn = findViewById(R.id.linkageBtn);
         labbtn = findViewById(R.id.labbtn);
         radiologyBtn = findViewById(R.id.radiologyBtn);

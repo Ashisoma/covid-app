@@ -54,9 +54,9 @@ public interface ApiClient {
     @FormUrlEncoded
     Call<Patient> savePatientTriage(@Field("temperature") double temperature, @Field("weight") double weight,
                                     @Field("height") double height, @Field("spo2") double spo2,
-                                    @Field("zscore") double zscore, @Field("cough") String cough,
-                                    @Field("difficulty_in_breathing") String difficulty_in_breathing,
-                                    @Field("weight_loss") String weight_loss, @Field("patient_id") int patient_id,
+                                    @Field("zscore") double zscore, @Field("cough")@Nullable String cough,
+                                    @Field("difficulty_in_breathing")@Nullable String difficulty_in_breathing,
+                                    @Field("weight_loss")@Nullable String weight_loss, @Field("patient_id") int patient_id,
                                     @Field("filled_by") int filled_by);
 
     @POST("save_screening_data")
