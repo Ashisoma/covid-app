@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -24,7 +25,8 @@ public class PatientHomePageActivity extends AppCompatActivity {
     private static final String TAG = "PatientHomePageActivity";
 
     private RelativeLayout covidManagementBtn, triageBtn, screeningBtn, contactTracingBtn, labbtn,
-            radiologyBtn, patientHistoryBtn, linkageBtn;
+            radiologyBtn, patientManagementBtn, linkageBtn;
+    private LinearLayout patientHistoryBtn;
     private TextView inpatientName, closePatientSession;
 
     private Patient inpatient;
@@ -84,9 +86,11 @@ public class PatientHomePageActivity extends AppCompatActivity {
 
 //        covidManagementBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, PatientManagementActivity.class)));
 
-        patientHistoryBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, PatientHistoryActivity.class)));
+        patientManagementBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, PatientManagentActivity.class)));
 
 //        linkageBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, LinkageActivity.class)));
+
+        patientHistoryBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, PatientHistoryActivity.class)));
 
     }
 
@@ -97,7 +101,8 @@ public class PatientHomePageActivity extends AppCompatActivity {
         closePatientSession = findViewById(R.id.closePatientSession);
         screeningBtn = findViewById(R.id.screeningBtn);
         contactTracingBtn = findViewById(R.id.contactTracingBtn);
-        patientHistoryBtn = findViewById(R.id.patientManagementBtn);
+        patientManagementBtn = findViewById(R.id.patientManagementBtn);
+        patientHistoryBtn = findViewById(R.id.patientHistoryBtn);
 //        linkageBtn = findViewById(R.id.linkageBtn);
         labbtn = findViewById(R.id.labbtn);
         radiologyBtn = findViewById(R.id.radiologyBtn);

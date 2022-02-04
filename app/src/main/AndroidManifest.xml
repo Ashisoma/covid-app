@@ -19,11 +19,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidApp"
         tools:replace="android:icon">
-        <activity android:name=".activity.LinkageActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-            android:name=".activity.PatientHistoryActivity"
+            android:name=".activity.LinkageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.PatientManagentActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -44,6 +45,10 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.ContactTracingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.PatientHistoryActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
