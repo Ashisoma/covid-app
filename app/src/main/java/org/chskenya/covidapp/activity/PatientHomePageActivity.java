@@ -7,6 +7,7 @@ import android.util.Log;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import androidx.appcompat.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +15,7 @@ import org.chskenya.covidapp.R;
 import org.chskenya.covidapp.model.Patient;
 import org.chskenya.covidapp.model.User;
 import org.chskenya.covidapp.offlineRoom.PatientDB;
+import org.chskenya.covidapp.util.SessionManager;
 
 import java.util.List;
 
@@ -33,6 +35,7 @@ public class PatientHomePageActivity extends AppCompatActivity {
 
     private PatientDB patientDB;
     private User user;
+    private Toolbar toolbar;
 
     SharedPreferences pref;
     SharedPreferences.Editor editor;
@@ -94,6 +97,12 @@ public class PatientHomePageActivity extends AppCompatActivity {
         radiologyResultsBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, RadiologyResultsActivity.class)));
         labResultBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, RadiologyResultsActivity.class)));
 
+        user = SessionManager.INSTANCE.getUser();
+        if (user != null) {
+            toolbar.setTitle("Hello, " + user.getNames());
+        }
+        setSupportActionBar(toolbar);
+
     }
 
     private void initViews() {
@@ -111,6 +120,7 @@ public class PatientHomePageActivity extends AppCompatActivity {
         radiologyResultsBtn = findViewById(R.id.radiologyResultsBtn);
         patientDB = PatientDB.getInstance(PatientHomePageActivity.this);
         labResultBtn = findViewById(R.id.labResultBtn);
+        toolbar = findViewById(R.id.toolbar);
     }
 
 }
