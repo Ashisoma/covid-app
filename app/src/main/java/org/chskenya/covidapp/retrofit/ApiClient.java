@@ -3,6 +3,7 @@ package org.chskenya.covidapp.retrofit;
 import androidx.annotation.Nullable;
 
 import org.chskenya.covidapp.model.InitialData;
+import org.chskenya.covidapp.model.Lab;
 import org.chskenya.covidapp.model.Patient;
 import org.chskenya.covidapp.model.PatientContact;
 import org.chskenya.covidapp.model.PatientHistory;
@@ -113,6 +114,9 @@ public interface ApiClient {
 
     @GET("get_radiology_request")
     Call<Radiology> getRadiologyData(@Query("patientId") int patientId);
+
+    @GET("get_lab_results")
+    Call<Lab> getLabResultsRequest(@Query("patientId") int patientId);
 
 
 }

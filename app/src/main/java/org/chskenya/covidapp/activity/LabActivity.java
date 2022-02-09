@@ -9,12 +9,18 @@ import android.os.Bundle;
 import android.util.Log;
 
 import org.chskenya.covidapp.R;
+import org.chskenya.covidapp.model.Lab;
 import org.chskenya.covidapp.model.Patient;
 import org.chskenya.covidapp.model.User;
 import org.chskenya.covidapp.offlineRoom.PatientDB;
+import org.chskenya.covidapp.retrofit.AuthRetrofitApiClient;
 import org.chskenya.covidapp.util.SessionManager;
 
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class LabActivity extends AppCompatActivity {
 
@@ -54,6 +60,32 @@ public class LabActivity extends AppCompatActivity {
         toolbar.setTitle(inpatient.getFirstName() + " " + inpatient.getSecondName() + " " + inpatient.getSurname());
         setSupportActionBar(toolbar);
 
+        getLabLatestLabResults();
+
+    }
+
+    private void getLabLatestLabResults(){
+        AuthRetrofitApiClient.getInstance(this)
+                .getAuthorizedApi()
+                .getLabResultsRequest(inpatient.getId())
+                .enqueue(new Callback<Lab>() {
+                    @Override
+                    public void onResponse(Call<Lab> call, Response<Lab> response) {
+                        if (response.code() == 200) {
+                            runOnUiThread(() -> {
+                                System.out.println(response.body());
+
+                            });
+                        } else if (response.code() == 401) {
+                            System.out.println("============================== RESPONSE CODE 401================================");
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<Lab> call, Throwable t) {
+                        System.out.println("============================== RESPONSE CODE 500================================");
+                    }
+                });
     }
 
 

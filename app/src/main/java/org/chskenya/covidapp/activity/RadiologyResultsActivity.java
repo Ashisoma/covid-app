@@ -10,11 +10,17 @@ import android.util.Log;
 
 import org.chskenya.covidapp.R;
 import org.chskenya.covidapp.model.Patient;
+import org.chskenya.covidapp.model.Radiology;
 import org.chskenya.covidapp.model.User;
 import org.chskenya.covidapp.offlineRoom.PatientDB;
+import org.chskenya.covidapp.retrofit.AuthRetrofitApiClient;
 import org.chskenya.covidapp.util.SessionManager;
 
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class RadiologyResultsActivity extends AppCompatActivity {
     private final String TAG = this.getClass().getSimpleName();
@@ -54,7 +60,32 @@ public class RadiologyResultsActivity extends AppCompatActivity {
         toolbar.setTitle(inpatient.getFirstName() + " " + inpatient.getSecondName() + " " + inpatient.getSurname());
         setSupportActionBar(toolbar);
 
+        getLatestRadiology();
+
     }
+
+    private void getLatestRadiology(){
+        AuthRetrofitApiClient.getInstance(this)
+                .getAuthorizedApi()
+                .getRadiologyData(inpatient.getId())
+                .enqueue(new Callback<Radiology>() {
+                    @Override
+                    public void onResponse(Call<Radiology> call, Response<Radiology> response) {
+                        if (response.code() == 200) {
+                            runOnUiThread(() -> {
+                                System.out.println(response.body());
+                            });
+                        } else if (response.code() == 401) {
+                            System.out.println("============================== RESPONSE CODE 401================================");
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<Radiology> call, Throwable t) {
+                        System.out.println("============================== RESPONSE CODE 500================================");
+                    }
+                });
+            }
 
 
     private void initViews() {
