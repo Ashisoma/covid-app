@@ -6,6 +6,7 @@ import org.chskenya.covidapp.model.InitialData;
 import org.chskenya.covidapp.model.Patient;
 import org.chskenya.covidapp.model.PatientContact;
 import org.chskenya.covidapp.model.PatientHistory;
+import org.chskenya.covidapp.model.Radiology;
 import org.chskenya.covidapp.model.User;
 
 import java.util.List;
@@ -108,9 +109,10 @@ public interface ApiClient {
                                        @Field("comments") String comments, @Field("submitted_by") int submitted_by);
 
     @GET("get_patient_history")
-    Call<PatientHistory> getPatientHistoryRequest(@Field("patient_id") int patient_id, @Field("date_taken") String date_taken,
-                                                  @Field("places_traveled") String places_traveled, @Field("second_dose") String second_dose);
+    Call<PatientHistory> getPatientHistoryRequest(@Query("patientId") int patientId);
 
+    @GET("get_radiology_request")
+    Call<Radiology> getRadiologyData(@Query("patientId") int patientId);
 
 
 }
