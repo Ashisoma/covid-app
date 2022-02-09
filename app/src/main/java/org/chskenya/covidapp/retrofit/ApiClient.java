@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import org.chskenya.covidapp.model.InitialData;
 import org.chskenya.covidapp.model.Patient;
 import org.chskenya.covidapp.model.PatientContact;
+import org.chskenya.covidapp.model.PatientHistory;
 import org.chskenya.covidapp.model.User;
 
 import java.util.List;
@@ -105,5 +106,11 @@ public interface ApiClient {
                                        @Field("test_type") String test_type,
                                        @Field("date_done") String date_done, @Field("results") String results,
                                        @Field("comments") String comments, @Field("submitted_by") int submitted_by);
+
+    @GET("get_patient_history")
+    Call<PatientHistory> getPatientHistoryRequest(@Field("patient_id") int patient_id, @Field("date_taken") String date_taken,
+                                                  @Field("places_traveled") String places_traveled, @Field("second_dose") String second_dose);
+
+
 
 }

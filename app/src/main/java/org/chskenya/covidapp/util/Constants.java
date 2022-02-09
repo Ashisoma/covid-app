@@ -9,7 +9,7 @@ import java.io.File;
 
 public class Constants {
     public static final String UUID = "5C536241-D67E-4393-BA26-87E198E215B5";
-    public static final String BASE_URL = "http://192.168.141.198:83/covid-app-api/";
+    public static final String BASE_URL = "http://172.16.0.10:83/covid-app-api/";
     public static final String MY_PREFS_NAME = "TibaTekeleziPrefs";
 
     public File DIRECTORY_PATH;
