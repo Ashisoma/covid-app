@@ -66,7 +66,7 @@
     <string name="test_type">Test Type</string>
     <string name="date_collected">Date Collected</string>
     <string name="date_sent_to_lab">Date sent to Lab</string>
-    <string name="results">Results</string>
+    <string name="results">Lab Results</string>
     <string name="patient_history_latest_data">Patient History Latest Data</string>
     <string name="date_taken">Date taken</string>
     <string name="travelled_in_the_last_14_days">Travelled in the last 14 days</string>
@@ -76,6 +76,7 @@
     <string name="vaccinated">Vaccinated</string>
     <string name="first_dose">First Dose</string>
     <string name="second_dose">Second Dose</string>
+    <string name="this_data_is_coming_soon">This data is coming soon</string>
 
     <string-array name="options_list">
         <item>Select Option</item>

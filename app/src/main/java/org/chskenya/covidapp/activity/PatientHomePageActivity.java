@@ -95,7 +95,7 @@ public class PatientHomePageActivity extends AppCompatActivity {
 
         patientHistoryBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, PatientHistoryActivity.class)));
         radiologyResultsBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, RadiologyResultsActivity.class)));
-        labResultBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, RadiologyResultsActivity.class)));
+        labResultBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, LabActivity.class)));
 
         user = SessionManager.INSTANCE.getUser();
         if (user != null) {

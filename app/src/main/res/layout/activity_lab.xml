@@ -25,8 +25,30 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+
+        <LinearLayout
+            android:id="@+id/noDataLV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible">
+            <ImageView
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:src="@drawable/ic_add_contacts"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/this_data_is_coming_soon"
+                android:textColor="@color/normal_grey"
+                android:layout_marginTop="20dp"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:textAllCaps="true"/>
+        </LinearLayout>
     <RelativeLayout
-        android:id="@+id/emailRequest"
+        android:id="@+id/labs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="34dp">
@@ -52,8 +74,10 @@
 
 
     <LinearLayout
+        android:id="@+id/viewData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="30dp"
@@ -69,7 +93,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/specimen_type"
                 android:textColor="@color/colorPrimary"
-                android:textSize="13sp" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/specimen_type_tv"
@@ -82,7 +106,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:background="@color/grey" />
 
         </LinearLayout>
@@ -90,6 +114,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:orientation="vertical">
 
             <TextView
@@ -97,7 +122,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/test_type"
                 android:textColor="@color/colorPrimary"
-                android:textSize="13sp" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/test_type_tv"
@@ -111,7 +136,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:background="@color/grey" />
 
         </LinearLayout>
@@ -127,7 +152,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/date_collected"
                 android:textColor="@color/colorPrimary"
-                android:textSize="13sp" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/date_collected_tv"
@@ -140,7 +165,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:background="@color/grey" />
 
         </LinearLayout>
@@ -156,7 +181,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/date_sent_to_lab"
                 android:textColor="@color/colorPrimary"
-                android:textSize="13sp" />
+                android:textSize="15sp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -169,7 +194,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:background="@color/grey" />
 
         </LinearLayout>
@@ -184,7 +209,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/results"
                 android:textColor="@color/colorPrimary"
-                android:textSize="13sp" />
+                android:textSize="15sp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -197,34 +222,12 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:background="@color/grey" />
 
         </LinearLayout>
     </LinearLayout>
 
-
-
-        <!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:gravity="center"-->
-<!--        android:orientation="vertical">-->
-
-<!--        <ImageView-->
-<!--            android:layout_width="250dp"-->
-<!--            android:layout_height="250dp"-->
-<!--            android:src="@drawable/ic_add_contacts"/>-->
-
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="This data is coming soon"-->
-<!--            android:textColor="@color/normal_grey"-->
-<!--            android:layout_marginTop="20dp"-->
-<!--            style="@style/TextAppearance.AppCompat.Title"-->
-<!--            android:textAllCaps="true"/>-->
-<!--    </LinearLayout>-->
 
 
 </LinearLayout>

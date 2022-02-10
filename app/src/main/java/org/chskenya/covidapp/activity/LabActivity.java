@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.chskenya.covidapp.R;
@@ -31,6 +33,7 @@ public class LabActivity extends AppCompatActivity {
     private Patient inpatient;
     private PatientDB patientDB;
     private TextView specimen_type, test_type, date_collected, date_sent_to_lab, results;
+    private LinearLayout noDataLV, viewData;
 
     SharedPreferences pref;
     SharedPreferences.Editor editor;
@@ -76,6 +79,15 @@ public class LabActivity extends AppCompatActivity {
                         if (response.code() == 200) {
                             runOnUiThread(() -> {
                                 System.out.println(response.body());
+                                if(response.body() != null) {
+                                    noDataLV.setVisibility(View.GONE);
+                                    viewData.setVisibility(View.VISIBLE);
+                                    specimen_type.setText(response.body().getSpecimen_type());
+                                    test_type.setText(response.body().getTest_type());
+                                    date_sent_to_lab.setText(response.body().getDate_sent_to_lab());
+                                    results.setText(response.body().getLab_result());
+                                    date_collected.setText(response.body().getDate_collected());
+                                }
 
                             });
                         } else if (response.code() == 401) {
@@ -99,6 +111,8 @@ public class LabActivity extends AppCompatActivity {
         date_collected = findViewById(R.id.date_collected_tv);
         date_sent_to_lab = findViewById(R.id.date_sent_to_lab_tv);
         results = findViewById(R.id.result_tv);
+        noDataLV = findViewById(R.id.noDataLV);
+        viewData = findViewById(R.id.viewData);
     }
 
     @Override

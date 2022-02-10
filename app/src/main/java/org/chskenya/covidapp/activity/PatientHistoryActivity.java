@@ -32,7 +32,7 @@ public class PatientHistoryActivity extends AppCompatActivity {
     private PatientDB patientDB;
     private TextView date_taken, travelled,places_traveled,
     contact_with_infected,contactSetting,vaccinated,first_dose,secondDose;
-    private LinearLayout nothingDataLV,dataView;
+    private LinearLayout nothingDataLV, dataView;
 
     SharedPreferences pref;
     SharedPreferences.Editor editor;
