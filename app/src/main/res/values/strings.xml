@@ -63,7 +63,7 @@
     <string name="check_in">Check in</string>
     <string name="lab_request_latest_data">Lab Request Latest Data</string>
     <string name="specimen_type">Specimen Type</string>
-    <string name="test_type">Test Type</string>
+    <string name="test_types">Test Type</string>
     <string name="date_collected">Date Collected</string>
     <string name="date_sent_to_lab">Date sent to Lab</string>
     <string name="results">Lab Results</string>
@@ -77,6 +77,12 @@
     <string name="first_dose">First Dose</string>
     <string name="second_dose">Second Dose</string>
     <string name="this_data_is_coming_soon">This data is coming soon</string>
+    <string name="radiology_results_latest_data">Radiology Results Latest Data</string>
+    <string name="date_requested">Date Requested</string>
+    <string name="date_done">Date done</string>
+    <string name="radiology_results">Radiology Results</string>
+    <string name="comments">Comments</string>
+    <string name="test_type">Test Type</string>
 
     <string-array name="options_list">
         <item>Select Option</item>

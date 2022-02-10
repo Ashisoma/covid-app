@@ -27,6 +27,18 @@ public class Radiology implements Serializable {
     @Expose
     private String comments;
 
+    @SerializedName("test_type")
+    @Expose
+    private String test_type;
+
+    public String getTest_type() {
+        return test_type;
+    }
+
+    public void setTest_type(String test_type) {
+        this.test_type = test_type;
+    }
+
     public Integer getId() {
         return id;
     }
