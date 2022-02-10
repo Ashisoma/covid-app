@@ -61,6 +61,21 @@
     <string name="patient_save_data_success">Patient Data has been saved successfully</string>
     <string name="title_activity_contact_linelist">Contact Linelist Activity</string>
     <string name="check_in">Check in</string>
+    <string name="lab_request_latest_data">Lab Request Latest Data</string>
+    <string name="specimen_type">Specimen Type</string>
+    <string name="test_type">Test Type</string>
+    <string name="date_collected">Date Collected</string>
+    <string name="date_sent_to_lab">Date sent to Lab</string>
+    <string name="results">Results</string>
+    <string name="patient_history_latest_data">Patient History Latest Data</string>
+    <string name="date_taken">Date taken</string>
+    <string name="travelled_in_the_last_14_days">Travelled in the last 14 days</string>
+    <string name="places_travelled">Places Travelled</string>
+    <string name="contact_with_infected">Contact with infected</string>
+    <string name="contact_setting">Contact Setting</string>
+    <string name="vaccinated">Vaccinated</string>
+    <string name="first_dose">First Dose</string>
+    <string name="second_dose">Second Dose</string>
 
     <string-array name="options_list">
         <item>Select Option</item>

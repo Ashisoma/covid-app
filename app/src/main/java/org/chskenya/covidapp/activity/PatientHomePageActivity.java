@@ -121,6 +121,7 @@ public class PatientHomePageActivity extends AppCompatActivity {
         patientDB = PatientDB.getInstance(PatientHomePageActivity.this);
         labResultBtn = findViewById(R.id.labResultBtn);
         toolbar = findViewById(R.id.toolbar);
+
     }
 
 }

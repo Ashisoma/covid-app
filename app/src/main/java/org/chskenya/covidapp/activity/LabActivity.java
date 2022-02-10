@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import org.chskenya.covidapp.R;
 import org.chskenya.covidapp.model.Lab;
@@ -29,6 +30,7 @@ public class LabActivity extends AppCompatActivity {
     private User user;
     private Patient inpatient;
     private PatientDB patientDB;
+    private TextView specimen_type, test_type, date_collected, date_sent_to_lab, results;
 
     SharedPreferences pref;
     SharedPreferences.Editor editor;
@@ -92,6 +94,11 @@ public class LabActivity extends AppCompatActivity {
     private void initViews() {
         patientDB = PatientDB.getInstance(LabActivity.this);
         toolbar = findViewById(R.id.toolbar);
+        specimen_type = findViewById(R.id.specimen_type_tv);
+        test_type = findViewById(R.id.test_type_tv);
+        date_collected = findViewById(R.id.date_collected_tv);
+        date_sent_to_lab = findViewById(R.id.date_sent_to_lab_tv);
+        results = findViewById(R.id.result_tv);
     }
 
     @Override

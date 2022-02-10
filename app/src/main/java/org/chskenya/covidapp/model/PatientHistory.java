@@ -15,9 +15,9 @@ public class PatientHistory implements Serializable {
     @Expose
     String date_taken;
 
-    @SerializedName("places_traveled")
+    @SerializedName("places_travelled")
     @Expose
-    String places_traveled;
+    String places_travelled;
 
     @SerializedName("contact_with_infected")
     @Expose
@@ -31,9 +31,17 @@ public class PatientHistory implements Serializable {
     @Expose
     String first_dose;
 
+    @SerializedName("travelled")
+    @Expose
+    String travelled;
+
     @SerializedName("first_dose_date")
     @Expose
     String first_dose_date;
+
+    @SerializedName("contact_setting")
+    @Expose
+    String contact_setting;
 
     @SerializedName("second_dose")
     @Expose
@@ -42,6 +50,14 @@ public class PatientHistory implements Serializable {
     @SerializedName("second_dose_date")
     @Expose
     String second_dose_date;
+
+    public String getContact_setting() {
+        return contact_setting;
+    }
+
+    public String getTravelled() {
+        return travelled;
+    }
 
     public Integer getId() {
         return id;
@@ -52,7 +68,7 @@ public class PatientHistory implements Serializable {
     }
 
     public String getPlaces_traveled() {
-        return places_traveled;
+        return places_travelled;
     }
 
     public String getContact_with_infected() {
@@ -88,7 +104,7 @@ public class PatientHistory implements Serializable {
     }
 
     public void setPlaces_traveled(String places_traveled) {
-        this.places_traveled = places_traveled;
+        this.places_travelled = places_traveled;
     }
 
     public void setContact_with_infected(String contact_with_infected) {
