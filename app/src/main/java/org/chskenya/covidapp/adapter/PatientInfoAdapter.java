@@ -24,6 +24,7 @@ import org.chskenya.covidapp.model.Facility;
 import org.chskenya.covidapp.model.InitialData;
 import org.chskenya.covidapp.model.PatientContact;
 import org.chskenya.covidapp.model.Subcounty;
+import org.chskenya.covidapp.model.User;
 import org.chskenya.covidapp.util.SessionManager;
 import org.jetbrains.annotations.NotNull;
 
@@ -52,6 +53,7 @@ public class PatientInfoAdapter extends PagerAdapter {
     LinearLayout childIdView, adultIdView;
 
     private EditText dob;
+    private User user;
 
     private Facility[] facilities;
     private County[] counties;

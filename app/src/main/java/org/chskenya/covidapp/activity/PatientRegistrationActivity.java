@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
@@ -111,6 +112,7 @@ public class PatientRegistrationActivity extends AppCompatActivity {
                 viewPager.setCurrentItem(current);
             } else {
                 runOnUiThread(() -> pDialog.show());
+
                 AuthRetrofitApiClient.getInstance(PatientRegistrationActivity.this)
                         .getAuthorizedApi()
                         .registerPatient(patientInfoAdapter.getFirstName(), patientInfoAdapter.getSecondName(),

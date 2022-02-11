@@ -11,6 +11,7 @@ import org.chskenya.covidapp.model.Radiology;
 import org.chskenya.covidapp.model.User;
 
 import java.util.List;
+import java.util.Optional;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -38,7 +39,7 @@ public interface ApiClient {
     @POST("register_patient")
     @FormUrlEncoded
     Call<Patient> registerPatient(@Field("firstName") String firstName, @Field("secondName") String secondName,
-                                  @Field("surname") String surname, @Field("facility")@Nullable String facility,
+                                  @Field("surname") String surname, @Nullable @Field("facility") String facility,
                                   @Field("nationalID") String nationalID, @Field("guardianID") String guardianID,
                                   @Field("guardianName") String guardianName, @Field("phone") String phone,
                                   @Field("citizenship") String citizenship, @Field("gender") String gender,
