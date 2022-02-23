@@ -10,6 +10,7 @@ import com.google.gson.annotations.SerializedName;
 import org.chskenya.covidapp.offlineRoom.Converter.PatientContactConverter;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Entity(tableName  = "patients") public class Patient implements Serializable {
     @PrimaryKey(autoGenerate = false)
@@ -299,4 +300,6 @@ import java.io.Serializable;
     public void setPatientContacts(PatientContact[] patientContacts) {
         this.patientContacts = patientContacts;
     }
+
+
 }

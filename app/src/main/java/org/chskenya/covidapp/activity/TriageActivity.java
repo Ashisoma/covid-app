@@ -23,7 +23,9 @@ import org.chskenya.covidapp.retrofit.AuthRetrofitApiClient;
 import org.chskenya.covidapp.util.SessionManager;
 import org.jetbrains.annotations.NotNull;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.sql.Date;
 import java.util.List;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
@@ -114,7 +116,9 @@ public class TriageActivity extends AppCompatActivity {
                 etzscore.setError("Enter current zscore");
             } else if (zscore > 3) {
                 etzscore.setError("Enter a valid zscore");
-            } else if (coughSpinner.getSelectedItem() == null) {
+//            }else if ((Integer.parseInt(inpatient.getDob())- LocalDate.now())<18){
+//
+//            } else if (coughSpinner.getSelectedItem() == null) {
                 Toast.makeText(this, "Does the patient have a cough?", Toast.LENGTH_SHORT).show();
             } else if (breathingDifficultySpinner.getSelectedItem() == null) {
                 Toast.makeText(this, "Does the patient have observed difficulty in breathing?", Toast.LENGTH_SHORT).show();
@@ -182,7 +186,7 @@ public class TriageActivity extends AppCompatActivity {
         etspo2 = findViewById(R.id.etspo2);
         etzscore = findViewById(R.id.etzscore);
         coughSpinner = findViewById(R.id.coughSpinner);
-        breathingDifficultySpinner = findViewById(R.id.breathingDifficultySpinner);
+//        breathingDifficultySpinner = findViewById(R.id.breathingDifficultySpinner);
         weightLossSpinner = findViewById(R.id.weightLossSpinner);
         btnSubmit = findViewById(R.id.btnSubmit);
         pDialog = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);

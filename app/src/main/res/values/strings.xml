@@ -14,6 +14,7 @@
     <string name="search_by">Search by Phone/ID Number</string>
     <string name="error_title">Error</string>
     <string name="okay">OK</string>
+    <string name="error_messo">Error</string>
     <string name="sweetalert_error_message">Unable to proceed please try again…</string>
     <string name="no_prev_page">No previous page</string>
     <string name="finish">finish</string>
@@ -22,6 +23,7 @@
     <string name="error_message">Error Logging in. Try again later</string>
     <string name="forgot_username_or_password">Forgot Password?</string>
     <string name="log_in">Log In</string>
+    <string name="not_allowed">User not allowed</string>
     <string name="click_here_to_register">Register Account</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="register">Register</string>
@@ -44,6 +46,8 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="submit">submit</string>
+    <string name="no_list">No Patients Found</string>
+    <string name="not_found">Not found Try Again</string>
     <string name="unauthorized_user_error">User not allowed. Contact admin or Enter correct username and password</string>
     <string name="server_access_error">Unable to connect.</string>
     <string name="exit_app">Exit Application</string>

@@ -97,10 +97,19 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 pDialog.show();
                 patientList = patientDB.getPatientListDAO().searchPatients(searchString);
-                pDialog.dismissWithAnimation();
+                if(patientList.isEmpty()) {
+                    runOnUiThread(() -> {
+                        new SweetAlertDialog(MainActivity.this, SweetAlertDialog.ERROR_TYPE)
+                                .setTitleText(getString(R.string.error_title))
+                                .setContentText(getResources().getString(R.string.no_list))
+                                .setConfirmButton(getString(R.string.retry), SweetAlertDialog::dismissWithAnimation);
+
+                    });
+
+                }
+                pDialog.dismiss();
                 rvPatientView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
                 rvPatientView.setHasFixedSize(true);
-
                 PatientListviewAdapter patientListviewAdapter = new PatientListviewAdapter(MainActivity.this);
                 rvPatientView.setAdapter(patientListviewAdapter);
                 patientListviewAdapter.setPatientList(patientList);
@@ -141,9 +150,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, LoginActivity.class));
                 finish();
             });
-        } else if (id == R.id.profile) {
+        } //else if (id == R.id.profile) {
 //            startActivity(new Intent(this, UserProfile.class));
-        } else {
+         else {
             return super.onOptionsItemSelected(item);
         }
         return true;

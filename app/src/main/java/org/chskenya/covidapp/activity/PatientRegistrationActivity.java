@@ -121,7 +121,7 @@ public class PatientRegistrationActivity extends AppCompatActivity {
                                 patientInfoAdapter.getCitizenship(), patientInfoAdapter.getGender(), patientInfoAdapter.getOccupation(),
                                 patientInfoAdapter.getMaritalStatus(), patientInfoAdapter.getEducationLevel(), patientInfoAdapter.getDob(),
                                 patientInfoAdapter.getAlive(), patientInfoAdapter.getCaseLocation(),
-                                patientInfoAdapter.getInvestigatingFacility(), patientInfoAdapter.getCounty(),
+                                user.getFacility(), patientInfoAdapter.getCounty(),
                                 patientInfoAdapter.getSubCounty(), patientInfoAdapter.getNokName(), patientInfoAdapter.getNokPhone(),
                                 patientInfoAdapter.getDepartment())
                         .enqueue(new Callback<Patient>() {
@@ -162,6 +162,18 @@ public class PatientRegistrationActivity extends AppCompatActivity {
                                             .show()
                                     );
                                     Log.d(TAG, "onResponse: " + response.message());
+                                }
+                                else if (response.code() == 412){
+                                    runOnUiThread(() -> new SweetAlertDialog(PatientRegistrationActivity.this,
+                                            SweetAlertDialog.ERROR_TYPE)
+                                            .setTitleText(getString(R.string.error_title))
+                                            .setContentText(getResources().getString(R.string.session_expiry_error))
+                                            .setConfirmButton(getString(R.string.not_allowed), sweetAlertDialog -> {
+                                                startActivity(new Intent(PatientRegistrationActivity.this, LoginActivity.class));
+                                                finish();
+                                            })
+                                            .show()
+                                    );
                                 }
                             }
 
