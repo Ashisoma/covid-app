@@ -58,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // TODO: 07/03/2022 CHANGE THE P,HISTORY TO TRIAGE DATA
+
         initViews();
 
         pref = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
