@@ -74,17 +74,17 @@ public class TriageActivity extends AppCompatActivity {
         pref = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
         editor = pref.edit();
 
-        ArrayAdapter<String> coughAdapter = new ArrayAdapter<>(TriageActivity.this,
-                android.R.layout.simple_spinner_item, optionList);
-        coughSpinner.setAdapter(coughAdapter);
+//        ArrayAdapter<String> coughAdapter = new ArrayAdapter<>(TriageActivity.this,
+//                android.R.layout.simple_spinner_item, optionList);
+//        coughSpinner.setAdapter(coughAdapter);
 
-        ArrayAdapter<String> breathingDifficultyAdapter = new ArrayAdapter<>(TriageActivity.this,
-                android.R.layout.simple_spinner_item, optionList);
-        breathingDifficultySpinner.setAdapter(breathingDifficultyAdapter);
-
-        ArrayAdapter<String> weightLossAdapter = new ArrayAdapter<>(TriageActivity.this,
-                android.R.layout.simple_spinner_item, optionList);
-        weightLossSpinner.setAdapter(weightLossAdapter);
+//        ArrayAdapter<String> breathingDifficultyAdapter = new ArrayAdapter<>(TriageActivity.this,
+//                android.R.layout.simple_spinner_item, optionList);
+//        breathingDifficultySpinner.setAdapter(breathingDifficultyAdapter);
+//
+//        ArrayAdapter<String> weightLossAdapter = new ArrayAdapter<>(TriageActivity.this,
+//                android.R.layout.simple_spinner_item, optionList);
+//        weightLossSpinner.setAdapter(weightLossAdapter);
 
         btnSubmit.setOnClickListener(v -> {
             temp = Double.parseDouble(etTemp.getText().toString());
@@ -92,9 +92,9 @@ public class TriageActivity extends AppCompatActivity {
             height = Double.parseDouble(etHeight.getText().toString());
             spo2 = Double.parseDouble(etspo2.getText().toString());
             zscore = Double.parseDouble(etzscore.getText().toString());
-            String cough = coughSpinner.getSelectedItem().toString();
-            String difficulty_in_breathing = breathingDifficultySpinner.getSelectedItem().toString();
-            String weight_loss = weightLossSpinner.getSelectedItem().toString();
+            String cough = null;
+            String difficulty_in_breathing = null;
+            String weight_loss = null;
 
             if (TextUtils.isEmpty(etTemp.getText().toString().trim())){
                 etTemp.setError("Enter current temperature");
@@ -110,16 +110,12 @@ public class TriageActivity extends AppCompatActivity {
                 etHeight.setError("Enter a valid height");
             } else if (TextUtils.isEmpty(etspo2.getText().toString().trim())){
                 etspo2.setError("Enter current SPO2");
-            } else if (spo2 < 1 || spo2 > 100) {
+            } else if (spo2 < 90 || spo2 > 100) {
                 etspo2.setError("Enter a valid SPO2");
             } else if (TextUtils.isEmpty(etzscore.getText().toString().trim())){
                 etzscore.setError("Enter current zscore");
             } else if (zscore > 3) {
                 etzscore.setError("Enter a valid zscore");
-//            }else if ((Integer.parseInt(inpatient.getDob())- LocalDate.now())<18){
-//
-//            } else if (coughSpinner.getSelectedItem() == null) {
-                Toast.makeText(this, "Does the patient have a cough?", Toast.LENGTH_SHORT).show();
             } else if (breathingDifficultySpinner.getSelectedItem() == null) {
                 Toast.makeText(this, "Does the patient have observed difficulty in breathing?", Toast.LENGTH_SHORT).show();
             } else if (weightLossSpinner.getSelectedItem() == null) {
