@@ -3,7 +3,6 @@
 ## Authors
 
 - **Onesmus Okali**
-<!-- - **Jemima** -->
 
 ## Description
 
@@ -11,7 +10,6 @@
     
   >The web and the app both us the same api and backend to work
 
-{This is a detailed description of your application, including its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }
 
 ## Technologies Used
 
@@ -30,7 +28,7 @@
 
 - **Web app set up**
 
-  - Clone/download the repository.
+  - Clone/download this [repository](https://github.com/Ashisoma/covid-app-api).
   - Create up a MySql database with name as is in the .env file.
   - Run the spl file in ./assets folder in your workbench.
   - Move the project folder to htdocs to run with xampp/lampp/wampp.
