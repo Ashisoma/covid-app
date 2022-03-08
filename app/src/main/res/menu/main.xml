@@ -8,10 +8,10 @@
         android:title=""
         app:showAsAction="always">
         <menu>
-            <item
-                android:id="@+id/profile"
-                android:title="@string/user_profile"
-                android:icon="@drawable/ic_user"/>
+<!--            <item-->
+<!--                android:id="@+id/profile"-->
+<!--                android:title="@string/user_profile"-->
+<!--                android:icon="@drawable/ic_user"/>-->
 
             <item
                 android:id="@+id/navLogout"

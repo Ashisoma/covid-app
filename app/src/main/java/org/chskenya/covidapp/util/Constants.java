@@ -8,8 +8,8 @@ import org.chskenya.covidapp.R;
 import java.io.File;
 
 public class Constants {
-    public static final String UUID = "5C536241-D67E-4393-BA26-87E198E215B5";
-    public static final String BASE_URL = "http://172.16.1.110:83/covid-app-api/";
+    public static final String UUID = "{5C536241-D67E-4393-BA26-87E198E215B5}";
+    public static final String BASE_URL = "https://tibatekelezi.chskenya.org/";//
     public static final String MY_PREFS_NAME = "TibaTekeleziPrefs";
 
     public File DIRECTORY_PATH;

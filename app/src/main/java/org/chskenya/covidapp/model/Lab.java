@@ -52,6 +52,14 @@ public class Lab implements Serializable {
     @Expose
     private Integer investigator;
 
+    @SerializedName("test_type")
+    @Expose
+    private String test_type;
+
+    public String getTest_type() {
+        return test_type;
+    }
+
     public Integer getId() {
         return id;
     }

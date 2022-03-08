@@ -14,6 +14,7 @@
     <string name="search_by">Search by Phone/ID Number</string>
     <string name="error_title">Error</string>
     <string name="okay">OK</string>
+    <string name="error_messo">Error</string>
     <string name="sweetalert_error_message">Unable to proceed please try again…</string>
     <string name="no_prev_page">No previous page</string>
     <string name="finish">finish</string>
@@ -22,6 +23,7 @@
     <string name="error_message">Error Logging in. Try again later</string>
     <string name="forgot_username_or_password">Forgot Password?</string>
     <string name="log_in">Log In</string>
+    <string name="not_allowed">User not allowed</string>
     <string name="click_here_to_register">Register Account</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="register">Register</string>
@@ -44,6 +46,8 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="submit">submit</string>
+    <string name="no_list">No Patients Found</string>
+    <string name="not_found">Not found Try Again</string>
     <string name="unauthorized_user_error">User not allowed. Contact admin or Enter correct username and password</string>
     <string name="server_access_error">Unable to connect.</string>
     <string name="exit_app">Exit Application</string>
@@ -61,6 +65,28 @@
     <string name="patient_save_data_success">Patient Data has been saved successfully</string>
     <string name="title_activity_contact_linelist">Contact Linelist Activity</string>
     <string name="check_in">Check in</string>
+    <string name="lab_request_latest_data">Lab Request Latest Data</string>
+    <string name="specimen_type">Specimen Type</string>
+    <string name="test_types">Test Type</string>
+    <string name="date_collected">Date Collected</string>
+    <string name="date_sent_to_lab">Date sent to Lab</string>
+    <string name="results">Lab Results</string>
+    <string name="patient_history_latest_data">Patient History Latest Data</string>
+    <string name="date_taken">Date taken</string>
+    <string name="travelled_in_the_last_14_days">Travelled in the last 14 days</string>
+    <string name="places_travelled">Places Travelled</string>
+    <string name="contact_with_infected">Contact with infected</string>
+    <string name="contact_setting">Contact Setting</string>
+    <string name="vaccinated">Vaccinated</string>
+    <string name="first_dose">First Dose</string>
+    <string name="second_dose">Second Dose</string>
+    <string name="this_data_is_coming_soon">This data is coming soon</string>
+    <string name="radiology_results_latest_data">Radiology Results Latest Data</string>
+    <string name="date_requested">Date Requested</string>
+    <string name="date_done">Date done</string>
+    <string name="radiology_results">Radiology Results</string>
+    <string name="comments">Comments</string>
+    <string name="test_type">Test Type</string>
 
     <string-array name="options_list">
         <item>Select Option</item>

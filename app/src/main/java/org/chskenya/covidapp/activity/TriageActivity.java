@@ -23,7 +23,9 @@ import org.chskenya.covidapp.retrofit.AuthRetrofitApiClient;
 import org.chskenya.covidapp.util.SessionManager;
 import org.jetbrains.annotations.NotNull;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.sql.Date;
 import java.util.List;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
@@ -72,17 +74,17 @@ public class TriageActivity extends AppCompatActivity {
         pref = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
         editor = pref.edit();
 
-        ArrayAdapter<String> coughAdapter = new ArrayAdapter<>(TriageActivity.this,
-                android.R.layout.simple_spinner_item, optionList);
-        coughSpinner.setAdapter(coughAdapter);
-
-        ArrayAdapter<String> breathingDifficultyAdapter = new ArrayAdapter<>(TriageActivity.this,
-                android.R.layout.simple_spinner_item, optionList);
-        breathingDifficultySpinner.setAdapter(breathingDifficultyAdapter);
-
-        ArrayAdapter<String> weightLossAdapter = new ArrayAdapter<>(TriageActivity.this,
-                android.R.layout.simple_spinner_item, optionList);
-        weightLossSpinner.setAdapter(weightLossAdapter);
+//        ArrayAdapter<String> coughAdapter = new ArrayAdapter<>(TriageActivity.this,
+//                android.R.layout.simple_spinner_item, optionList);
+//        coughSpinner.setAdapter(coughAdapter);
+//
+//        ArrayAdapter<String> breathingDifficultyAdapter = new ArrayAdapter<>(TriageActivity.this,
+//                android.R.layout.simple_spinner_item, optionList);
+//        breathingDifficultySpinner.setAdapter(breathingDifficultyAdapter);
+//
+//        ArrayAdapter<String> weightLossAdapter = new ArrayAdapter<>(TriageActivity.this,
+//                android.R.layout.simple_spinner_item, optionList);
+//        weightLossSpinner.setAdapter(weightLossAdapter);
 
         btnSubmit.setOnClickListener(v -> {
             temp = Double.parseDouble(etTemp.getText().toString());
@@ -90,9 +92,9 @@ public class TriageActivity extends AppCompatActivity {
             height = Double.parseDouble(etHeight.getText().toString());
             spo2 = Double.parseDouble(etspo2.getText().toString());
             zscore = Double.parseDouble(etzscore.getText().toString());
-            String cough = coughSpinner.getSelectedItem().toString();
-            String difficulty_in_breathing = breathingDifficultySpinner.getSelectedItem().toString();
-            String weight_loss = weightLossSpinner.getSelectedItem().toString();
+            String cough = "";
+            String difficulty_in_breathing = "";
+            String weight_loss = "";
 
             if (TextUtils.isEmpty(etTemp.getText().toString().trim())){
                 etTemp.setError("Enter current temperature");
@@ -114,12 +116,14 @@ public class TriageActivity extends AppCompatActivity {
                 etzscore.setError("Enter current zscore");
             } else if (zscore > 3) {
                 etzscore.setError("Enter a valid zscore");
-            } else if (coughSpinner.getSelectedItem() == null) {
-                Toast.makeText(this, "Does the patient have a cough?", Toast.LENGTH_SHORT).show();
-            } else if (breathingDifficultySpinner.getSelectedItem() == null) {
-                Toast.makeText(this, "Does the patient have observed difficulty in breathing?", Toast.LENGTH_SHORT).show();
-            } else if (weightLossSpinner.getSelectedItem() == null) {
-                Toast.makeText(this, "Does the patient have unintended weight loss?", Toast.LENGTH_SHORT).show();
+//            }else if ((Integer.parseInt(inpatient.getDob())- LocalDate.now())<18){
+//
+//            } else if (coughSpinner.getSelectedItem() == null) {
+//                Toast.makeText(this, "Does the patient have a cough?", Toast.LENGTH_SHORT).show();
+//            } else if (breathingDifficultySpinner.getSelectedItem() == null) {
+//                Toast.makeText(this, "Does the patient have observed difficulty in breathing?", Toast.LENGTH_SHORT).show();
+//            } else if (weightLossSpinner.getSelectedItem() == null) {
+//                Toast.makeText(this, "Does the patient have unintended weight loss?", Toast.LENGTH_SHORT).show();
             } else {
                 pDialog.show();
                 AuthRetrofitApiClient.getInstance(TriageActivity.this)
@@ -182,7 +186,7 @@ public class TriageActivity extends AppCompatActivity {
         etspo2 = findViewById(R.id.etspo2);
         etzscore = findViewById(R.id.etzscore);
         coughSpinner = findViewById(R.id.coughSpinner);
-        breathingDifficultySpinner = findViewById(R.id.breathingDifficultySpinner);
+//        breathingDifficultySpinner = findViewById(R.id.breathingDifficultySpinner);
         weightLossSpinner = findViewById(R.id.weightLossSpinner);
         btnSubmit = findViewById(R.id.btnSubmit);
         pDialog = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);

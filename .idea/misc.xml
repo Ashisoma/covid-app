@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Onesmus.Ashisoma/Downloads/tiba-tekelezi-app/app/src/main/res/layout/activity_contact_linelist.xml" value="0.1" />
+        <entry key="..\:/Users/Onesmus.Ashisoma/Downloads/tiba-tekelezi-app/app/src/main/res/layout/activity_lab.xml" value="0.22" />
+        <entry key="..\:/Users/Onesmus.Ashisoma/Downloads/tiba-tekelezi-app/app/src/main/res/layout/activity_linkage.xml" value="0.12228260869565218" />
+        <entry key="..\:/Users/Onesmus.Ashisoma/Downloads/tiba-tekelezi-app/app/src/main/res/layout/activity_login.xml" value="0.11145833333333334" />
+        <entry key="..\:/Users/Onesmus.Ashisoma/Downloads/tiba-tekelezi-app/app/src/main/res/layout/activity_patient_history.xml" value="0.1796875" />
+        <entry key="..\:/Users/Onesmus.Ashisoma/Downloads/tiba-tekelezi-app/app/src/main/res/layout/activity_patient_history_acivity.xml" value="0.22" />
+        <entry key="..\:/Users/Onesmus.Ashisoma/Downloads/tiba-tekelezi-app/app/src/main/res/layout/activity_patient_home_page.xml" value="0.1796875" />
+        <entry key="..\:/Users/Onesmus.Ashisoma/Downloads/tiba-tekelezi-app/app/src/main/res/layout/activity_patient_registration.xml" value="0.1796875" />
+        <entry key="..\:/Users/Onesmus.Ashisoma/Downloads/tiba-tekelezi-app/app/src/main/res/layout/activity_radiology_results.xml" value="0.1796875" />
+        <entry key="..\:/Users/Onesmus.Ashisoma/Downloads/tiba-tekelezi-app/app/src/main/res/layout/activity_triage.xml" value="0.1796875" />
+        <entry key="..\:/Users/Onesmus.Ashisoma/Downloads/tiba-tekelezi-app/app/src/main/res/layout/content_contact_linelist.xml" value="0.12228260869565218" />
+        <entry key="..\:/Users/Onesmus.Ashisoma/Downloads/tiba-tekelezi-app/app/src/main/res/layout/layout_patient_contacts.xml" value="0.1796875" />
+        <entry key="..\:/Users/Onesmus.Ashisoma/Downloads/tiba-tekelezi-app/app/src/main/res/layout/linkage_info1.xml" value="0.12228260869565218" />
+        <entry key="..\:/Users/Onesmus.Ashisoma/Downloads/tiba-tekelezi-app/app/src/main/res/layout/patient_history_info1.xml" value="0.1796875" />
+        <entry key="..\:/Users/Onesmus.Ashisoma/Downloads/tiba-tekelezi-app/app/src/main/res/menu/main.xml" value="0.1796875" />
+        <entry key="..\:/Users/User/StudioProjects/covid-app/app/src/main/res/layout/activity_radiology.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/User/StudioProjects/covid-app/app/src/main/res/layout/activity_triage.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>

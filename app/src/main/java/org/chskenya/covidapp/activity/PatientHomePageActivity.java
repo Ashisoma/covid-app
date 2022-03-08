@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import androidx.appcompat.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,6 +15,7 @@ import org.chskenya.covidapp.R;
 import org.chskenya.covidapp.model.Patient;
 import org.chskenya.covidapp.model.User;
 import org.chskenya.covidapp.offlineRoom.PatientDB;
+import org.chskenya.covidapp.util.SessionManager;
 
 import java.util.List;
 
@@ -24,13 +27,15 @@ public class PatientHomePageActivity extends AppCompatActivity {
     private static final String TAG = "PatientHomePageActivity";
 
     private RelativeLayout covidManagementBtn, triageBtn, screeningBtn, contactTracingBtn, labbtn,
-            radiologyBtn, patientHistoryBtn, linkageBtn;
+            radiologyBtn, patientManagementBtn, linkageBtn;
+    private LinearLayout patientHistoryBtn, radiologyResultsBtn, labResultBtn;
     private TextView inpatientName, closePatientSession;
 
     private Patient inpatient;
 
     private PatientDB patientDB;
     private User user;
+    private Toolbar toolbar;
 
     SharedPreferences pref;
     SharedPreferences.Editor editor;
@@ -82,26 +87,41 @@ public class PatientHomePageActivity extends AppCompatActivity {
 
         radiologyBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, RadiologyActivity.class)));
 
-        covidManagementBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, PatientManagementActivity.class)));
+//        covidManagementBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, PatientManagementActivity.class)));
+
+        patientManagementBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, PatientManagentActivity.class)));
+
+//        linkageBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, LinkageActivity.class)));
 
         patientHistoryBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, PatientHistoryActivity.class)));
+        radiologyResultsBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, RadiologyResultsActivity.class)));
+        labResultBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, LabActivity.class)));
 
-        linkageBtn.setOnClickListener(v -> startActivity(new Intent(PatientHomePageActivity.this, LinkageActivity.class)));
+        user = SessionManager.INSTANCE.getUser();
+        if (user != null) {
+            toolbar.setTitle("Hello, " + user.getNames());
+        }
+        setSupportActionBar(toolbar);
 
     }
 
     private void initViews() {
-        covidManagementBtn = findViewById(R.id.covidManagementBtn);
+//        covidManagementBtn = findViewById(R.id.covidManagementBtn);
         triageBtn = findViewById(R.id.triageBtn);
         inpatientName = findViewById(R.id.inpatientName);
         closePatientSession = findViewById(R.id.closePatientSession);
         screeningBtn = findViewById(R.id.screeningBtn);
         contactTracingBtn = findViewById(R.id.contactTracingBtn);
+        patientManagementBtn = findViewById(R.id.patientManagementBtn);
         patientHistoryBtn = findViewById(R.id.patientHistoryBtn);
-        linkageBtn = findViewById(R.id.linkageBtn);
+//        linkageBtn = findViewById(R.id.linkageBtn);
         labbtn = findViewById(R.id.labbtn);
         radiologyBtn = findViewById(R.id.radiologyBtn);
+        radiologyResultsBtn = findViewById(R.id.radiologyResultsBtn);
         patientDB = PatientDB.getInstance(PatientHomePageActivity.this);
+        labResultBtn = findViewById(R.id.labResultBtn);
+        toolbar = findViewById(R.id.toolbar);
+
     }
 
 }

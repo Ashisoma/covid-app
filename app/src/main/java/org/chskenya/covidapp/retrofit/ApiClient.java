@@ -3,11 +3,15 @@ package org.chskenya.covidapp.retrofit;
 import androidx.annotation.Nullable;
 
 import org.chskenya.covidapp.model.InitialData;
+import org.chskenya.covidapp.model.Lab;
 import org.chskenya.covidapp.model.Patient;
 import org.chskenya.covidapp.model.PatientContact;
+import org.chskenya.covidapp.model.PatientHistory;
+import org.chskenya.covidapp.model.Radiology;
 import org.chskenya.covidapp.model.User;
 
 import java.util.List;
+import java.util.Optional;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -35,7 +39,7 @@ public interface ApiClient {
     @POST("register_patient")
     @FormUrlEncoded
     Call<Patient> registerPatient(@Field("firstName") String firstName, @Field("secondName") String secondName,
-                                  @Field("surname") String surname, @Field("facility")@Nullable String facility,
+                                  @Field("surname") String surname, @Nullable @Field("facility") String facility,
                                   @Field("nationalID") String nationalID, @Field("guardianID") String guardianID,
                                   @Field("guardianName") String guardianName, @Field("phone") String phone,
                                   @Field("citizenship") String citizenship, @Field("gender") String gender,
@@ -54,9 +58,9 @@ public interface ApiClient {
     @FormUrlEncoded
     Call<Patient> savePatientTriage(@Field("temperature") double temperature, @Field("weight") double weight,
                                     @Field("height") double height, @Field("spo2") double spo2,
-                                    @Field("zscore") double zscore, @Field("cough") String cough,
-                                    @Field("difficulty_in_breathing") String difficulty_in_breathing,
-                                    @Field("weight_loss") String weight_loss, @Field("patient_id") int patient_id,
+                                    @Field("zscore") double zscore, @Field("cough")@Nullable String cough,
+                                    @Field("difficulty_in_breathing")@Nullable String difficulty_in_breathing,
+                                    @Field("weight_loss")@Nullable String weight_loss, @Field("patient_id") int patient_id,
                                     @Field("filled_by") int filled_by);
 
     @POST("save_screening_data")
@@ -105,5 +109,15 @@ public interface ApiClient {
                                        @Field("test_type") String test_type,
                                        @Field("date_done") String date_done, @Field("results") String results,
                                        @Field("comments") String comments, @Field("submitted_by") int submitted_by);
+
+    @GET("get_patient_history")
+    Call<PatientHistory> getPatientHistoryRequest(@Query("patientId") int patientId);
+
+    @GET("get_radiology_request")
+    Call<Radiology> getRadiologyData(@Query("patientId") int patientId);
+
+    @GET("get_lab_results")
+    Call<Lab> getLabResultsRequest(@Query("patientId") int patientId);
+
 
 }

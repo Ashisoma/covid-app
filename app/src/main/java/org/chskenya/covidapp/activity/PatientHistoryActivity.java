@@ -1,54 +1,48 @@
 package org.chskenya.covidapp.activity;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import org.chskenya.covidapp.R;
-import org.chskenya.covidapp.adapter.PatientHistoryAdapter;
-import org.chskenya.covidapp.model.InitialData;
+import org.chskenya.covidapp.model.Patient;
+import org.chskenya.covidapp.model.PatientHistory;
 import org.chskenya.covidapp.model.User;
-import org.chskenya.covidapp.offlineRoom.InitialDataDB;
+import org.chskenya.covidapp.offlineRoom.PatientDB;
+import org.chskenya.covidapp.retrofit.AuthRetrofitApiClient;
 import org.chskenya.covidapp.util.SessionManager;
-import org.chskenya.covidapp.util.Utility;
 
-import cn.pedant.SweetAlert.SweetAlertDialog;
+import java.util.List;
 
-import static org.chskenya.covidapp.util.Constants.MY_PREFS_NAME;
+import retrofit2.Response;
 
 public class PatientHistoryActivity extends AppCompatActivity {
-    private static final String TAG = "PatientHistoryActivity";
 
-    private ViewPager viewPager;
-    private int[] layouts;
-    private Button next, previous;
-
+    private final String TAG = this.getClass().getSimpleName();
+    private Toolbar toolbar;
     private User user;
+    private Patient inpatient;
+    private PatientDB patientDB;
+    private TextView date_taken, travelled,places_traveled,
+    contact_with_infected,contactSetting,vaccinated,first_dose,secondDose;
+    private LinearLayout nothingDataLV, dataView;
 
-    private InitialData initialData;
-    private InitialDataDB initialDataDB;
-    private Utility utility;
-
-    private SweetAlertDialog pDialog;
     SharedPreferences pref;
     SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_patient_history);
+        setContentView(R.layout.activity_patient_history_acivity);
 
         initViews();
-
-        pref = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
-        editor = pref.edit();
 
         user = SessionManager.INSTANCE.getUser();
         if (user == null) {
@@ -59,83 +53,82 @@ public class PatientHistoryActivity extends AppCompatActivity {
             finish();
         }
 
-        //setup layouts
-        layouts = new int[]{
-                R.layout.patient_history_info1,
-                R.layout.patient_history_info2
-        };
-
-        PatientHistoryAdapter patientHistoryAdapter = new PatientHistoryAdapter(this, initialData, layouts);
-        viewPager.setAdapter(patientHistoryAdapter);
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
+        List<Patient> savedPatients = patientDB.getPatientListDAO().getAllPatients();
+        Log.d(TAG, "onCreate: Patients: " + savedPatients);
+        for (int i = 0; i < savedPatients.size(); i++) {
+            Patient patient = savedPatients.get(i);
+            if (patient.getActive() == 1) {
+                inpatient = patient;
+                Log.d(TAG, "onCreate: inpatient" + inpatient);
             }
+        }
 
+        toolbar.setTitle(inpatient.getFirstName() + " " + inpatient.getSecondName() + " " + inpatient.getSurname());
+        setSupportActionBar(toolbar);
+
+        getPatientHistory();
+        System.out.println("===========================++++++=========HEREEEEE++++++============================");
+
+    }
+
+
+
+    private void getPatientHistory(){
+        AuthRetrofitApiClient.getInstance(this)
+                .getAuthorizedApi()
+                .getPatientHistoryRequest(inpatient.getId()).enqueue(new retrofit2.Callback<PatientHistory>() {
             @Override
-            public void onPageSelected(int position) {
-                //change next button text
-                if (position == layouts.length - 1) {
-                    next.setText(getString(R.string.finish));
-                    previous.setVisibility(View.VISIBLE);
-                } else if (position == 0) {
-                    previous.setVisibility(View.GONE);
-                } else {
-                    previous.setVisibility(View.VISIBLE);
-                    next.setText(getString(R.string.next));
+            public void onResponse(retrofit2.Call<PatientHistory> call, Response<PatientHistory> response) {
+                if (response.code() == 200) {
+                    runOnUiThread(()-> {
+                        System.out.println(response.body());
+                        if(response.body() != null) {
+                            nothingDataLV.setVisibility(View.GONE);
+                            dataView.setVisibility(View.VISIBLE);
+                            date_taken.setText(response.body().getDate_taken());
+                            travelled.setText(response.body().getTravelled());
+                            places_traveled.setText(response.body().getPlaces_traveled());
+                            contact_with_infected.setText(response.body().getContact_with_infected());
+                            contactSetting.setText(response.body().getContact_setting());
+                            vaccinated.setText(response.body().getVaccinated());
+                            first_dose.setText(response.body().getFirst_dose());
+                            secondDose.setText(response.body().getSecond_dose());
+                        }
+                    });
                 }
+                else if (response.code() == 401) {
+
+                    Log.d(TAG, "onResponse: " + response.message());
+                }
+
             }
 
             @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
-
-        next.setOnClickListener(v -> {
-            int current = getItem(+1);
-
-            if (current < layouts.length) {
-                viewPager.setCurrentItem(current);
-            } else {
-                runOnUiThread(() -> new SweetAlertDialog(PatientHistoryActivity.this, SweetAlertDialog.SUCCESS_TYPE)
-                        .setTitleText(getString(R.string.success))
-                        .setContentText(getString(R.string.patient_save_data_success))
-                        .setConfirmButton(getString(R.string.main_activity), dialog -> {
-                            dialog.dismissWithAnimation();
-
-                            startActivity(new Intent(PatientHistoryActivity.this, PatientHomePageActivity.class));
-                            finish();
-                        })
-                        .show());
-            }
-        });
-
-        previous.setOnClickListener(v2 -> {
-            int prev = getItem(-1);
-            if (prev >= 0) {
-                viewPager.setCurrentItem(prev);
-                next.setText(getString(R.string.next));
-            } else {
-                Toast.makeText(this, getString(R.string.no_prev_page), Toast.LENGTH_SHORT).show();
+            public void onFailure(retrofit2.Call<PatientHistory> call, Throwable t) {
+                System.out.println("==============================NDURUUUU WEUHHHHHWUEHHHHHHHHH=========================================");
             }
         });
     }
 
     private void initViews() {
-        viewPager = findViewById(R.id.view_pager);
-        next = findViewById(R.id.btn_next);
-        previous = findViewById(R.id.btn_previous);
-        pDialog = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);
-        pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-        pDialog.setTitleText(getResources().getString(R.string.saving_patient));
-        pDialog.setCancelable(false);
-        initialDataDB = InitialDataDB.getInstance(PatientHistoryActivity.this);
-        initialData = initialDataDB.getInitialDataDAO().getInitialData();
+        patientDB = PatientDB.getInstance(PatientHistoryActivity.this);
+        toolbar = findViewById(R.id.toolbar);
+        date_taken = findViewById(R.id.date_taken_tv);
+        travelled = findViewById(R.id.travelled_in_the_last_14_days_tv);
+        places_traveled = findViewById(R.id.places_travelled_tv);
+        contact_with_infected = findViewById(R.id.contact_with_infected_tv);
+        contactSetting = findViewById(R.id.contact_setting_tv);
+        vaccinated = findViewById(R.id.vaccinated_tv);
+        first_dose = findViewById(R.id.fist_dose_tv);
+        secondDose = findViewById(R.id.second_dose_tv);
+        nothingDataLV = findViewById(R.id.nothingDataLV);
+        dataView = findViewById(R.id.dataView);
+
     }
 
-    private int getItem(int i) {
-        return viewPager.getCurrentItem() + i;
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 }

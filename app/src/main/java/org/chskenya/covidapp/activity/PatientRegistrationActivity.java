@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
@@ -111,6 +112,7 @@ public class PatientRegistrationActivity extends AppCompatActivity {
                 viewPager.setCurrentItem(current);
             } else {
                 runOnUiThread(() -> pDialog.show());
+
                 AuthRetrofitApiClient.getInstance(PatientRegistrationActivity.this)
                         .getAuthorizedApi()
                         .registerPatient(patientInfoAdapter.getFirstName(), patientInfoAdapter.getSecondName(),
@@ -119,7 +121,7 @@ public class PatientRegistrationActivity extends AppCompatActivity {
                                 patientInfoAdapter.getCitizenship(), patientInfoAdapter.getGender(), patientInfoAdapter.getOccupation(),
                                 patientInfoAdapter.getMaritalStatus(), patientInfoAdapter.getEducationLevel(), patientInfoAdapter.getDob(),
                                 patientInfoAdapter.getAlive(), patientInfoAdapter.getCaseLocation(),
-                                patientInfoAdapter.getInvestigatingFacility(), patientInfoAdapter.getCounty(),
+                                user.getFacility(), patientInfoAdapter.getCounty(),
                                 patientInfoAdapter.getSubCounty(), patientInfoAdapter.getNokName(), patientInfoAdapter.getNokPhone(),
                                 patientInfoAdapter.getDepartment())
                         .enqueue(new Callback<Patient>() {
@@ -160,6 +162,18 @@ public class PatientRegistrationActivity extends AppCompatActivity {
                                             .show()
                                     );
                                     Log.d(TAG, "onResponse: " + response.message());
+                                }
+                                else if (response.code() == 412){
+                                    runOnUiThread(() -> new SweetAlertDialog(PatientRegistrationActivity.this,
+                                            SweetAlertDialog.ERROR_TYPE)
+                                            .setTitleText(getString(R.string.error_title))
+                                            .setContentText(getResources().getString(R.string.session_expiry_error))
+                                            .setConfirmButton(getString(R.string.not_allowed), sweetAlertDialog -> {
+                                                startActivity(new Intent(PatientRegistrationActivity.this, LoginActivity.class));
+                                                finish();
+                                            })
+                                            .show()
+                                    );
                                 }
                             }
 
