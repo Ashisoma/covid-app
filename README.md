@@ -42,7 +42,7 @@
 
 ## Support and contact details
 
->Send an email to the current [development team](mailto:ookali@chskenya.org)
+>Send an email to the current [development team](mailto:oonesmus@chskenya.org)
 
 ### License
 
