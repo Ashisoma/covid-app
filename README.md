@@ -8,7 +8,7 @@
 ## Description
 
   >Tiba Tekelezi is a mobile phone and web based application used for TB Covid19 Bi Directional screening and Testing.
-    >
+    
   >The web and the app both us the same api and backend to work
 
 {This is a detailed description of your application, including its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }
