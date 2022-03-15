@@ -98,18 +98,17 @@ public class MainActivity extends AppCompatActivity {
                 etSearchParam.setError("Enter Phone number or patient ID number");
             } else {
                 pDialog.show();
-                patientList = patientDB.getPatientListDAO().searchPatients(searchString);
-                if(patientList.isEmpty()) {
                     runOnUiThread(() -> {
-                        new SweetAlertDialog(MainActivity.this, SweetAlertDialog.ERROR_TYPE)
+                        patientList = patientDB.getPatientListDAO().searchPatients(searchString);
+                                if(patientList.size() == 0) {
+
+                                    new SweetAlertDialog(MainActivity.this, SweetAlertDialog.ERROR_TYPE)
                                 .setTitleText(getString(R.string.error_title))
                                 .setContentText(getResources().getString(R.string.no_list))
                                 .setConfirmButton(getString(R.string.retry), SweetAlertDialog::dismissWithAnimation);
-
+                                }
                     });
-
-                }
-                pDialog.dismiss();
+                    pDialog.dismiss();
                 rvPatientView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
                 rvPatientView.setHasFixedSize(true);
                 PatientListviewAdapter patientListviewAdapter = new PatientListviewAdapter(MainActivity.this);
