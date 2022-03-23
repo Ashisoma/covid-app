@@ -158,7 +158,7 @@ public class RadiologyActivity extends AppCompatActivity {
                 Toast.makeText(this, "Enter a comment about the radiology procedure", Toast.LENGTH_SHORT).show();
             }
 
-            if (error) {
+            if (!error) {
                 System.out.println(error);
                 runOnUiThread(() -> pDialog.show());
                 AuthRetrofitApiClient.getInstance(RadiologyActivity.this)
