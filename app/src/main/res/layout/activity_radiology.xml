@@ -76,8 +76,8 @@
                         style="@style/SpinnerTheme"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        app:hintTextColor="@color/required_text_input_layout"
                         android:padding="10dp"
-                        app:boxStrokeColor="@color/required_text_input_layout"
                         app:hintText="Select type" />
                 </LinearLayout>
 

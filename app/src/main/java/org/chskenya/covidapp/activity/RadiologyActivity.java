@@ -7,9 +7,11 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -117,32 +119,47 @@ public class RadiologyActivity extends AppCompatActivity {
         resultSpinner.setAdapter(testResultsAdapter);
 
         btnSubmit.setOnClickListener(v -> {
-            String test_type = testTypeSpinner.getSelectedItem().toString();
+
+            /*
+            SearchableSpinner mySpinner = (SearchableSpinner)findViewById(R.id.spinner_configurable_item);
+            int selectedItemOfMySpinner = mySpinner.getSelectedItemPosition();
+            String actualPositionOfMySpinner = (String) mySpinner.getItemAtPosition(selectedItemOfMySpinner);
+
+            if (actualPositionOfMySpinner.isEmpty()) {
+                setSpinnerError(mySpinner,"field can't be empty");
+            }
+             */
+
             String date_requested = etDateRequested.getText().toString();
             String date_done = etDateDone.getText().toString();
             String results = resultSpinner.getSelectedItem().toString();
             String comments = etComments.getText().toString();
-
+            String test_type = testTypeSpinner.getSelectedItem().toString();
             boolean error = false;
 
-            if (testTypeSpinner.getSelectedItem() == null) {
+            if (TextUtils.isEmpty(test_type)) {
                 error = true;
                 Toast.makeText(this, "Select Test Type.", Toast.LENGTH_SHORT).show();
+                setSpinnerError(testTypeSpinner,"This field cannot be empty");
             } else if (TextUtils.isEmpty(date_requested)) {
                 error = true;
                 Toast.makeText(this, "Select date the radiology was requested.", Toast.LENGTH_SHORT).show();
+//                return;
             } else if (TextUtils.isEmpty(date_done)) {
                 error = true;
+                etDateDone.setError("Select date the radiology was done.");
                 Toast.makeText(this, "Select date the radiology was done.", Toast.LENGTH_SHORT).show();
-            } else if (resultSpinner.getSelectedItem() == null) {
+            } else if (results.isEmpty()) {
                 error = true;
-                Toast.makeText(this, "Select Radiology result", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Select date the radiology was done.", Toast.LENGTH_SHORT).show();
+                setSpinnerError(resultSpinner,"This field cannot be empty");
             } else if (TextUtils.isEmpty(comments)) {
                 error = true;
                 Toast.makeText(this, "Enter a comment about the radiology procedure", Toast.LENGTH_SHORT).show();
             }
 
-            if (!error) {
+            if (error) {
+                System.out.println(error);
                 runOnUiThread(() -> pDialog.show());
                 AuthRetrofitApiClient.getInstance(RadiologyActivity.this)
                         .getAuthorizedApi()
@@ -218,5 +235,17 @@ public class RadiologyActivity extends AppCompatActivity {
         String myFormat = "yyyy-MM-dd";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
         editText.setText(sdf.format(myCalendar.getTime()));
+    }
+    private void setSpinnerError(SearchableSpinner spinner, String error){
+        View selectedView = spinner.getSelectedView();
+        if (selectedView != null && selectedView instanceof TextView) {
+            spinner.requestFocus();
+            TextView selectedTextView = (TextView) selectedView;
+            selectedTextView.setError("error"); // any name of the error will do
+            selectedTextView.setTextColor(Color.RED); //text color in which you want your error message to be displayed
+            selectedTextView.setText(error); // actual error message
+            spinner.performClick(); // to open the spinner list if error is found.
+
+        }
     }
 }
