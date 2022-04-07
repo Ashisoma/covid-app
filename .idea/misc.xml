@@ -18,8 +18,16 @@
         <entry key="..\:/Users/Onesmus.Ashisoma/Downloads/tiba-tekelezi-app/app/src/main/res/layout/linkage_info1.xml" value="0.12228260869565218" />
         <entry key="..\:/Users/Onesmus.Ashisoma/Downloads/tiba-tekelezi-app/app/src/main/res/layout/patient_history_info1.xml" value="0.1796875" />
         <entry key="..\:/Users/Onesmus.Ashisoma/Downloads/tiba-tekelezi-app/app/src/main/res/menu/main.xml" value="0.1796875" />
-        <entry key="..\:/Users/User/StudioProjects/covid-app/app/src/main/res/layout/activity_radiology.xml" value="0.12360688956433637" />
-        <entry key="..\:/Users/User/StudioProjects/covid-app/app/src/main/res/layout/activity_triage.xml" value="0.1" />
+        <entry key="..\:/Users/User/AppData/Local/Android/Sdk/platforms/android-30/data/res/layout/simple_spinner_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/StudioProjects/covid-app/app/src/main/res/drawable/arc_dark_blue_fil.xml" value="0.236" />
+        <entry key="..\:/Users/User/StudioProjects/covid-app/app/src/main/res/drawable/rounded_edt.xml" value="0.2595" />
+        <entry key="..\:/Users/User/StudioProjects/covid-app/app/src/main/res/drawable/spinner_background.xml" value="0.236" />
+        <entry key="..\:/Users/User/StudioProjects/covid-app/app/src/main/res/layout/activity_lab_request.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/StudioProjects/covid-app/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/StudioProjects/covid-app/app/src/main/res/layout/activity_radiology.xml" value="0.18461538461538463" />
+        <entry key="..\:/Users/User/StudioProjects/covid-app/app/src/main/res/layout/activity_triage.xml" value="0.4" />
+        <entry key="..\:/Users/User/StudioProjects/covid-app/app/src/main/res/layout/patient_info1.xml" value="0.264" />
+        <entry key="..\:/Users/User/StudioProjects/covid-app/app/src/main/res/layout/patient_info2.xml" value="0.264" />
       </map>
     </option>
   </component>

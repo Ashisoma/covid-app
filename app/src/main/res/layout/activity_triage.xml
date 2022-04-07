@@ -22,11 +22,11 @@
                 style="@style/TextAppearance.AppCompat.Title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
                 android:gravity="center_horizontal"
                 android:text="Triage Form"
                 android:textAllCaps="true"
                 android:textColor="#000"
-                android:layout_marginTop="60dp"
                 android:textSize="24sp" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -36,7 +36,7 @@
                 android:layout_marginTop="10dp"
                 android:hint="Temperature"
                 app:boxStrokeColor="@color/required_text_input_layout"
-                app:hintTextColor="@color/tbGreen"
+                app:hintTextColor="@color/red"
                 app:startIconContentDescription="temp_icon"
                 app:startIconDrawable="@drawable/ic_temperature">
 
@@ -54,7 +54,7 @@
                 android:layout_marginTop="10dp"
                 android:hint="SPO2"
                 app:boxStrokeColor="@color/required_text_input_layout"
-                app:hintTextColor="@color/tbGreen"
+                app:hintTextColor="@color/red"
                 app:startIconContentDescription="spo2_icon"
                 app:startIconDrawable="@drawable/ic_oxygen">
 
@@ -73,7 +73,7 @@
                 android:layout_marginTop="10dp"
                 android:hint="Weight"
                 app:boxStrokeColor="@color/required_text_input_layout"
-                app:hintTextColor="@color/tbGreen"
+                app:hintTextColor="@color/red"
                 app:startIconContentDescription="weight_icon"
                 app:startIconDrawable="@drawable/ic_weight">
 
@@ -91,7 +91,7 @@
                 android:layout_marginTop="10dp"
                 android:hint="Height"
                 app:boxStrokeColor="@color/required_text_input_layout"
-                app:hintTextColor="@color/tbGreen"
+                app:hintTextColor="@color/red"
                 app:startIconContentDescription="height_icon"
                 app:startIconDrawable="@drawable/ic_height">
 
@@ -121,131 +121,131 @@
                     android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
 
-<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="80dp"-->
-<!--                android:layout_marginTop="10dp">-->
+            <!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="80dp"-->
+            <!--                android:layout_marginTop="10dp">-->
 
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="60dp"-->
-<!--                    android:background="@drawable/rounded_edt"-->
-<!--                    android:gravity="center"-->
-<!--                    android:orientation="horizontal"-->
-<!--                    android:paddingStart="15dp"-->
-<!--                    android:paddingEnd="15dp"-->
-<!--                    android:weightSum="2"-->
-<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                    app:layout_constraintEnd_toEndOf="parent"-->
-<!--                    app:layout_constraintStart_toStartOf="parent">-->
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="60dp"-->
+            <!--                    android:background="@drawable/rounded_edt"-->
+            <!--                    android:gravity="center"-->
+            <!--                    android:orientation="horizontal"-->
+            <!--                    android:paddingStart="15dp"-->
+            <!--                    android:paddingEnd="15dp"-->
+            <!--                    android:weightSum="2"-->
+            <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent">-->
 
-<!--                    <com.toptoche.searchablespinnerlibrary.SearchableSpinner-->
-<!--                        android:id="@+id/coughSpinner"-->
-<!--                        style="@style/SpinnerTheme"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="match_parent"-->
-<!--                        android:padding="10dp"-->
-<!--                        app:hintText="Select option" />-->
-<!--                </LinearLayout>-->
+            <!--                    <com.toptoche.searchablespinnerlibrary.SearchableSpinner-->
+            <!--                        android:id="@+id/coughSpinner"-->
+            <!--                        style="@style/SpinnerTheme"-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="match_parent"-->
+            <!--                        android:padding="10dp"-->
+            <!--                        app:hintText="Select option" />-->
+            <!--                </LinearLayout>-->
 
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginStart="20dp"-->
-<!--                    android:layout_marginTop="5dp"-->
-<!--                    android:background="#FFF"-->
-<!--                    android:padding="4dp"-->
-<!--                    android:text="Cough"-->
-<!--                    android:textColor="#3F5C22"-->
-<!--                    android:textSize="18sp"-->
-<!--                    android:textStyle="bold"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toTopOf="parent" />-->
-<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+            <!--                <TextView-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginStart="20dp"-->
+            <!--                    android:layout_marginTop="5dp"-->
+            <!--                    android:background="#FFF"-->
+            <!--                    android:padding="4dp"-->
+            <!--                    android:text="Cough"-->
+            <!--                    android:textColor="#3F5C22"-->
+            <!--                    android:textSize="18sp"-->
+            <!--                    android:textStyle="bold"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+            <!--                    app:layout_constraintTop_toTopOf="parent" />-->
+            <!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
 
-<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="80dp"-->
-<!--                android:layout_marginTop="10dp">-->
+            <!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="80dp"-->
+            <!--                android:layout_marginTop="10dp">-->
 
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="60dp"-->
-<!--                    android:background="@drawable/rounded_edt"-->
-<!--                    android:gravity="center"-->
-<!--                    android:orientation="horizontal"-->
-<!--                    android:paddingStart="15dp"-->
-<!--                    android:paddingEnd="15dp"-->
-<!--                    android:weightSum="2"-->
-<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                    app:layout_constraintEnd_toEndOf="parent"-->
-<!--                    app:layout_constraintStart_toStartOf="parent">-->
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="60dp"-->
+            <!--                    android:background="@drawable/rounded_edt"-->
+            <!--                    android:gravity="center"-->
+            <!--                    android:orientation="horizontal"-->
+            <!--                    android:paddingStart="15dp"-->
+            <!--                    android:paddingEnd="15dp"-->
+            <!--                    android:weightSum="2"-->
+            <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent">-->
 
-<!--                    <com.toptoche.searchablespinnerlibrary.SearchableSpinner-->
-<!--                        android:id="@+id/breathingDifficultySpinner"-->
-<!--                        style="@style/SpinnerTheme"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="match_parent"-->
-<!--                        android:padding="10dp"-->
-<!--                        app:hintText="Select option" />-->
-<!--                </LinearLayout>-->
+            <!--                    <com.toptoche.searchablespinnerlibrary.SearchableSpinner-->
+            <!--                        android:id="@+id/breathingDifficultySpinner"-->
+            <!--                        style="@style/SpinnerTheme"-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="match_parent"-->
+            <!--                        android:padding="10dp"-->
+            <!--                        app:hintText="Select option" />-->
+            <!--                </LinearLayout>-->
 
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginStart="20dp"-->
-<!--                    android:layout_marginTop="5dp"-->
-<!--                    android:background="#FFF"-->
-<!--                    android:padding="4dp"-->
-<!--                    android:text="Observed difficulty in breathing"-->
-<!--                    android:textColor="#3F5C22"-->
-<!--                    android:textSize="18sp"-->
-<!--                    android:textStyle="bold"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toTopOf="parent" />-->
-<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+            <!--                <TextView-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginStart="20dp"-->
+            <!--                    android:layout_marginTop="5dp"-->
+            <!--                    android:background="#FFF"-->
+            <!--                    android:padding="4dp"-->
+            <!--                    android:text="Observed difficulty in breathing"-->
+            <!--                    android:textColor="#3F5C22"-->
+            <!--                    android:textSize="18sp"-->
+            <!--                    android:textStyle="bold"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+            <!--                    app:layout_constraintTop_toTopOf="parent" />-->
+            <!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
 
-<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="80dp"-->
-<!--                android:layout_marginTop="10dp">-->
+            <!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="80dp"-->
+            <!--                android:layout_marginTop="10dp">-->
 
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="60dp"-->
-<!--                    android:background="@drawable/rounded_edt"-->
-<!--                    android:gravity="center"-->
-<!--                    android:orientation="horizontal"-->
-<!--                    android:paddingStart="15dp"-->
-<!--                    android:paddingEnd="15dp"-->
-<!--                    android:weightSum="2"-->
-<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                    app:layout_constraintEnd_toEndOf="parent"-->
-<!--                    app:layout_constraintStart_toStartOf="parent">-->
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="60dp"-->
+            <!--                    android:background="@drawable/rounded_edt"-->
+            <!--                    android:gravity="center"-->
+            <!--                    android:orientation="horizontal"-->
+            <!--                    android:paddingStart="15dp"-->
+            <!--                    android:paddingEnd="15dp"-->
+            <!--                    android:weightSum="2"-->
+            <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent">-->
 
-<!--                    <com.toptoche.searchablespinnerlibrary.SearchableSpinner-->
-<!--                        android:id="@+id/weightLossSpinner"-->
-<!--                        style="@style/SpinnerTheme"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="match_parent"-->
-<!--                        android:padding="10dp"-->
-<!--                        app:hintText="Select option" />-->
-<!--                </LinearLayout>-->
+            <!--                    <com.toptoche.searchablespinnerlibrary.SearchableSpinner-->
+            <!--                        android:id="@+id/weightLossSpinner"-->
+            <!--                        style="@style/SpinnerTheme"-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="match_parent"-->
+            <!--                        android:padding="10dp"-->
+            <!--                        app:hintText="Select option" />-->
+            <!--                </LinearLayout>-->
 
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginStart="20dp"-->
-<!--                    android:layout_marginTop="5dp"-->
-<!--                    android:background="#FFF"-->
-<!--                    android:padding="4dp"-->
-<!--                    android:text="Unintended weight loss"-->
-<!--                    android:textColor="#3F5C22"-->
-<!--                    android:textSize="18sp"-->
-<!--                    android:textStyle="bold"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toTopOf="parent" />-->
-<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+            <!--                <TextView-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginStart="20dp"-->
+            <!--                    android:layout_marginTop="5dp"-->
+            <!--                    android:background="#FFF"-->
+            <!--                    android:padding="4dp"-->
+            <!--                    android:text="Unintended weight loss"-->
+            <!--                    android:textColor="#3F5C22"-->
+            <!--                    android:textSize="18sp"-->
+            <!--                    android:textStyle="bold"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+            <!--                    app:layout_constraintTop_toTopOf="parent" />-->
+            <!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
 
         </LinearLayout>
     </ScrollView>

@@ -36,6 +36,7 @@
             android:id="@+id/etFName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            app:boxStrokeColor="@color/required_text_input_layout"
             android:layout_weight="1"
             android:background="@drawable/rounded_edt"
             android:gravity="center"
