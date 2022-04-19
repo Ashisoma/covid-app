@@ -19,6 +19,9 @@
         android:theme="@style/Theme.CovidApp"
         tools:replace="android:icon">
         <activity
+            android:name=".activity.ForgotPassword"
+            android:exported="false" />
+        <activity
             android:name=".activity.LabActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
