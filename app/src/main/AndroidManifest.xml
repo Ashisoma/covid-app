@@ -20,7 +20,8 @@
         tools:replace="android:icon">
         <activity
             android:name=".activity.ForgotPassword"
-            android:exported="false" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.LabActivity"
             android:screenOrientation="portrait"
