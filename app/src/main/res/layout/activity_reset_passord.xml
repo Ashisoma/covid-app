@@ -7,7 +7,7 @@
     android:background="@drawable/gradient_bg"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".activity.RegisterActivity">
+    tools:context=".activity.ResetPassord">
 
     <ImageView
         android:layout_width="100dp"
@@ -47,7 +47,7 @@
             app:startIconDrawable="@drawable/ic_baseline_phone_24">
 
             <EditText
-                android:id="@+id/etNumber"
+                android:id="@+id/etPassResetNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="07********"
@@ -70,7 +70,7 @@
             app:startIconDrawable="@drawable/ic_lock">
 
             <EditText
-                android:id="@+id/etPassword"
+                android:id="@+id/etPassResetPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword|textNoSuggestions" />
@@ -91,14 +91,14 @@
             app:startIconDrawable="@drawable/ic_lock">
 
             <EditText
-                android:id="@+id/etConfirmPassword"
+                android:id="@+id/etPassResetConfirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword|textNoSuggestions" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
-            android:id="@+id/registererror"
+            android:id="@+id/reset_password_error"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -112,7 +112,7 @@
 
 
         <Button
-            android:id="@+id/btnRegister"
+            android:id="@+id/btnResetPass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
