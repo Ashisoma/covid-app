@@ -32,7 +32,17 @@ public interface ApiClient {
     @FormUrlEncoded
     Call<User[]> registerUser(@Field("phone") String phone,
                               @Field("password") String password);
+    // this has not been implemented on the web version to go online
+    @POST("reset_active")
+    @FormUrlEncoded
+    Call<User> resetNumber(@Field("phone") String phone);
 
+    @POST("reset_password")
+    @FormUrlEncoded
+    Call<User[]> resetPassword(@Field("phone") String phone,
+                             @Field("password") String password);
+
+    // =================== make sure to first got online before running these function ======================
     @GET("verify_token")
     Call<User> verifyToken();
 
