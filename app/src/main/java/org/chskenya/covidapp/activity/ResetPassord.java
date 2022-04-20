@@ -33,6 +33,9 @@ public class ResetPassord extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reset_passord);
         initViews();
+
+        // TODO: 20/04/2022  uncomment when the web has gone live with the new routes for reseting the password
+//        btnResetPassord.setOnClickListener(v -> resetUserPassword());
     }
 
     private void resetUserPassword() {
