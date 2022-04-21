@@ -35,6 +35,9 @@ public class ForgotPassword extends AppCompatActivity {
 
         initViews();
 
+        // TODO: 20/04/2022  change this function to setActiveLow() after the web part has gone live
+        btnResetPassword.setOnClickListener( v -> sign());
+
 
     }
 
@@ -114,6 +117,11 @@ public class ForgotPassword extends AppCompatActivity {
 
     public void signIn(View view) {
         onBackPressed();
+    }
+
+    public void sign() {
+        Intent intent = new Intent(ForgotPassword.this, ResetPassord.class);
+        startActivity(intent);
     }
 
     private boolean isValidPhoneNumber(String phone) {
